@@ -29,3 +29,7 @@ Current leading competitors are BONIC and MATLAB. BONIC only allows well founded
 proposing side while volunteering clients are only motivated for the contribution for big topic science.
 General public is not allowed to propose a program for the service. MATLAB only supports MATLAB
 scripted programs.
+## Minimum Value Product (MVP)
+The Minimum Value Product is the version of a new product with a collection of essential features that satisfy
+the early users. Our MVP is a *User Interface* with **Low Latency** response to **Real-Time** machine learning 
+and other **Iterative** tasks.
