@@ -1,11 +1,14 @@
 #Send back to user (know when task is done)(M->client)Cloud
 
-# -Check if all the result is back
+# -Check if all the result is back from slave 
 # -Discard impossible task and log it
 # -Present brief report
 # -Log with detail
 # -Zip the result
-# -send it back
+
+# check if client conputer is online
+# no - email notifying client open up consel to manually downlaod 
+# yes - send it back
 
 import os 
 import socket
