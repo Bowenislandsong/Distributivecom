@@ -17,6 +17,13 @@ from thread import *
 dir_path = os.path.dirname(os.path.realpath(__file__))
 #cwd = os.getcwd() # get the path of current fodler
 
+## Logging info:
+# Num of Files ecxpected
+# Where to send back the file
+# Owner of the file
+# Contact info (Email)
+
+
 
 
 os.system("scp foo.bar joe@srvr.net:/path/to/foo.bar")
