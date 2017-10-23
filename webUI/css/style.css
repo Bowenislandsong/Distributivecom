@@ -163,11 +163,6 @@ img{
 	text-transform: uppercase;
 }
 
-#upload form{
-
-
-}
-
 /* login */
 #login{
 	padding:20px;
@@ -196,6 +191,30 @@ img{
 }
 
 /* user upload */
+#upload form{
+	background: #484891;
+	width:600px;
+	height: 300px;
+	padding: 10px 0;
+	margin:0 auto;
+}
+
+#upload label{
+	font-size: 20px;
+	color:#fff;
+}
+
+#upload button{
+	width: 20%;
+	height: 30%;
+	padding: 10px 0;
+	font-size: 20px;
+	border: 0;
+	background: #fff;
+	color:#484891;
+}
+
+	
 
 
 

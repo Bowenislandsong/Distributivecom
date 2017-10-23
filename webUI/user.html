@@ -98,20 +98,29 @@
 			<div class="container">
 				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
 					<div class="col-xs-12 col-sm-10">
-						<h1>Please upload your<span class="primary-text"> code here:</span></h1>
+						<h1>Please upload your<span class="primary-text"> file here:</span></h1>
 						<form id="form1" enctype="multipart/form-data" method="post" action="upload.php">
 							<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
-								<label for="fileToUpload"> Select a File to Upload: </label>
+								<label for="fileToUpload"> Select a File to Upload:</label>
 								<input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>	
 							</div>
 							<div id="fileName"></div>
 							<div id="fileSize"></div>
 							<div id="fileType"></div>
-							<div class="row center center-sm center-md center-lg">
-								<input type="button" onclick="uploadFile()" value="Upload" />
+							<br>
+							<br>
+							<br>
+							<div class="row center center-sm center-md center-lg top-xs top-sm top-md top-lg">
+								<button type="button" onclick="uploadFile()"/>Upload</button>
+							</div>
+							<div>
+								<p>Please <a href="login.html">Login</a> before uploading.</p>
 							</div>
 							<div id="progressNumber"></div>
-						</form>													
+						</form>	
+						<br>
+						<br>
+						<br>											
 						</div>	
 					</div>
 				</div>
