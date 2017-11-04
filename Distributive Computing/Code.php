@@ -45,9 +45,7 @@
           accept=".csv, .zip">
   </div>
   <div>
-  <!-- <input type="submit" value="Upload Files" name="submit"> -->
-<progress value="0" max="100" id="uploader">0%</progress>
-          <input type="file" name="upload" id="fileButton"/>
+  <input type="submit" value="Upload Files" name="submit">
   </div>
 </form>
 
@@ -99,25 +97,6 @@ $FileType_data = pathinfo($target_file_data,PATHINFO_EXTENSION);
     messagingSenderId: "260081266013"
   };
   firebase.initializeApp(config);
-    //get elements for file upload
-  var uploader = document.getElementById('uploader');
-  var fileButton = document.getElementById('fileButton');
-  //listen
-  fileButton.addEventListener('change',function(e){
-    var file = e.target.files[0];
-    var storageRef = firebase.storage().ref('job_pdfs/'+file.name);
-    var task = storageRef.put(file);
-    task.on('state_changed',
-    function progress(snapshot){
-    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) *100;
-    uploader.value = percentage;
-    },
-  function error(err){
-
-  },
-  function complete(){}
-    );
-  });
 </script>
 
 
