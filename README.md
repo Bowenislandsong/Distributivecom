@@ -19,7 +19,7 @@ interest. I do acknowledge the difference between distributive system and comput
 distributive computing will help me to study the distributive system model.
 ## Users and Consumers
 Users are mainly people who are not using their computers for a long period of time and have constant
-stable internet access. These users will be interested in providing their computers for this service for
+stable Internet access. These users will be interested in providing their computers for this service for
 credits that can be exchanged to their local currency. In other words, users are people who are
 interested in signing up their computers for work with fixed amount of salaries depending on their
 computing powers. The consumers, who will be paying for the service, can execute their program on
@@ -33,3 +33,13 @@ scripted programs.
 The Minimum Value Product is the version of a new product with a collection of essential features that satisfy
 the early users. Our MVP is a *User Interface* with **Low Latency** response to **Real-Time** machine learning 
 and other **Iterative** tasks.
+## Current Project Structure
+The project is currently split into three components: Server Control, Local Web UI, and Website. 
+
+As their name suggested, *Sever Control* runs on server and is in charge of temporary file storage, client information reserving, and file splitting. 
+
+*Local Web UI* is built for customers interested lensing their computers for financial benefits. This Local Web UI, acting as a cross platform application, after activation, will automatically interact with server and perform tasks. 
+
+The *Website*, currently hosted at http://medusapys.ml, is a client side UI for customers looking for hiring computers on Medusa.pys clusters. Clients will upload their file for computing on other computers that are part of our cluster nodes. 
+
+To communicate with peer and master computers, the project uses *Swarm* to host *Redis* clusters.
