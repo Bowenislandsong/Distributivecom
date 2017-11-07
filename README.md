@@ -36,10 +36,10 @@ and other **Iterative** tasks.
 ## Current Project Structure
 The project is currently split into three components: Server Control, Local Web UI, and Website. 
 
-As their name suggested, *Sever Control* runs on server and is in charge of temporary file storage, client information reserving, and file splitting. 
+As their name suggested, **Sever Control** runs on server and is in charge of temporary file storage, client information reserving, and file splitting. 
 
-*Local Web UI* is built for customers interested lensing their computers for financial benefits. This Local Web UI, acting as a cross platform application, after activation, will automatically interact with server and perform tasks. 
+**Local Web UI** is built for customers interested lensing their computers for financial benefits. This Local Web UI, acting as a cross platform application, after activation, will automatically interact with server and perform tasks. 
 
-The *Website*, currently hosted at http://medusapys.ml, is a client side UI for customers looking for hiring computers on Medusa.pys clusters. Clients will upload their file for computing on other computers that are part of our cluster nodes. 
+The **Website**, currently hosted at http://medusapys.ml, is a client side UI for customers looking for hiring computers on Medusa.pys clusters. Clients will upload their file for computing on other computers that are part of our cluster nodes. 
 
-To communicate with peer and master computers, the project uses *Swarm* to host *Redis* clusters.
+To communicate with peer and master computers, the project uses **Swarm** to host **Redis** clusters.
