@@ -3,7 +3,7 @@
 import glob, os
 from zipfile import *
 
-file_name0 = "Arc.zip"
+file_name0 = ".zip"
 with ZipFile(file_name0, 'r') as zip:
 	zip.extractall();
 
@@ -21,7 +21,6 @@ for infile in glob.glob("1.jpg"):
 	zip_archive1.write(infile)
 for infile in glob.glob("2.jpg"):
 	zip_archive2.write(infile)
-
 
 
 
