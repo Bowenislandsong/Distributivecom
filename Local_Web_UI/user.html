@@ -40,94 +40,34 @@
 			</div>			
 		</section>
 
-	<!--a js part to implement the uploading task-->
-	<script type="text/javascript">
-      function fileSelected() {
-        var file = document.getElementById('fileToUpload').files[0];
-        if (file) {
-          var fileSize = 0;
-          if (file.size > 1024 * 1024)
-            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
-          else
-            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+	
+		<!--user uploads multiple files, add error ta -->
+		<section id="multi-upload">
+			<form action="./upload-form.php" method="post" enctype="multipart/form-data">
+				<input type="file" name="fileToUpload" id="fileToUpload">
+				<input type="submit" value="Click to Upload" name="submit">
+			</form>
+		</section>	
 
-          document.getElementById('fileName').innerHTML = 'Name: ' + file.name;
-          document.getElementById('fileSize').innerHTML = 'Size: ' + fileSize;
-          document.getElementById('fileType').innerHTML = 'Type: ' + file.type;
-        }
-      }
-
-      function uploadFile() {
-        var fd = new FormData();
-        fd.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
-        var xhr = new XMLHttpRequest();
-        xhr.upload.addEventListener("progress", uploadProgress, false);
-        xhr.addEventListener("load", uploadComplete, false);
-        xhr.addEventListener("error", uploadFailed, false);
-        xhr.addEventListener("abort", uploadCanceled, false);
-        xhr.open("POST", "UploadMinimal.aspx");
-        xhr.send(fd);
-      }
-
-      function uploadProgress(evt) {
-        if (evt.lengthComputable) {
-          var percentComplete = Math.round(evt.loaded * 100 / evt.total);
-          document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';
-        }
-        else {
-          document.getElementById('progressNumber').innerHTML = 'unable to compute';
-        }
-      }
-
-      function uploadComplete(evt) {
-        /* This event is raised when the server send back a response */
-        alert(evt.target.responseText);
-      }
-
-      function uploadFailed(evt) {
-        alert("There was an error attempting to upload the file.");
-      }
-
-      function uploadCanceled(evt) {
-        alert("The upload has been canceled by the user or the browser dropped the connection.");
-      }
-    </script>
-
-		<!--upload files-->
-		<section id="upload">
+		<!--upload a single file-->
+		<section id="single-upload">
 			<div class="container">
-				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
-					<div class="col-xs-12 col-sm-10">
-						<h1>Please upload your<span class="primary-text"> file here:</span></h1>
-						<form id="form1" enctype="multipart/form-data" method="post" action="upload.php">
-							<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
-								<label for="fileToUpload"> Select a File to Upload:</label>
-								<input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>	
-							</div>
-							<div id="fileName"></div>
-							<div id="fileSize"></div>
-							<div id="fileType"></div>
-							<br>
-							<br>
-							<br>
-							
-							<div class="row center center-sm center-md center-lg top-xs top-sm top-md top-lg">
-
-								<button type="button" onclick="uploadFile()"/>Upload</button>
-							</div>
-							<div>
-								<p>Please <a href="login.html">Login</a> before uploading.</p>
-							</div>
-							<div id="progressNumber"></div>
+				<div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-lg">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h2><span class="primary-text">Choice 2:</span> Let us segment for you!</h2>
+						<p>Please Upload Your File Here:</p>
+						<form id="single-upload-place" enctype="multipart/form-data" method="post" action="upload-form.php">
+							<input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
 						</form>	
+						<button type="sumbit">Upload</button>
 						<br>
 						<br>
-						<br>											
-						</div>	
+						<br>												
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>	
+
 
 		
 
