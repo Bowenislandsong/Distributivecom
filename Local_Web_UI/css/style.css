@@ -190,30 +190,77 @@ img{
 	color:#fff;
 }
 
-/* user upload */
-#upload form{
-	background: #484891;
-	width:600px;
+/* user multi-upload */
+
+#multi-upload h2{
+	font-size: 20px;
+	font-weight: 600;
+}
+
+#multi-upload p{
+	font-size: 15px;
+	font-weight: 400;
+}
+#multi-upload form{
+	background: #FCFCFC;
+	width:800px;
 	height: 300px;
 	padding: 10px 0;
 	margin:0 auto;
 }
+
+.file-upload-text1{
+	font-size: 25px;
+	color:#8E8E8E;
+	margin-top: 13%;
+}
+
+.file-upload-choose{
+	font-size: 20px;
+	color:#8E8E8E;
+	padding: 2px;
+	margin-left: 40px;
+}
+
+#multi-upload button{
+	margin-top: 10px;
+	width: 80px;
+	height: 40px;
+	font-size: 20px;
+	background: #484891;
+	color:#fff;
+}
+
+#single-upload h2{
+	font-size: 20px;
+	font-weight: 600;
+}
+#single-upload p{
+	font-size: 15px;
+	font-weight: 400;
+}
+
+#single-upload input{
+	padding: 2px;
+	margin-left: 50px;
+}
+
+#single-upload button{
+	margin-top: 10px;
+	width: 80px;
+	height: 40px;
+	font-size: 20px;
+	background: #484891;
+	color:#fff;
+}
+
 
 #upload label{
 	font-size: 20px;
 	color:#fff;
 }
 
-#upload button{
 
-	width: 20%;
-	height: 30%;
-	padding: 10px 0;
-	font-size: 20px;
-	border: 0;
-	background: #fff;
-	color:#484891;
-}
 
 /* Provider */
 #download h2{
