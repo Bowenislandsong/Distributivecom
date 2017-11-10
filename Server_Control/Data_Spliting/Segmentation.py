@@ -7,11 +7,17 @@
 # uploaded file (if wholesome) is a zip file.
 
 import glob, os
+from os import listdir
+from os.path import isfile, join
 from zipfile import *
 
-def IsNextfile(arg):
-	os.path.isfile('/.')
+RecourceDir = "../Recource/.";
+CodingDir = "../Coding/."
 
+
+def getFileList(arg):
+	onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+	
 def RecreateFolders:
 	if (os.path.isfile('../Recource/.')):
 
