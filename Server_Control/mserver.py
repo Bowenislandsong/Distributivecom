@@ -17,7 +17,7 @@ def chat_server():
     # add server socket object to the list of readable connections
     SOCKET_LIST.append(server_socket)
  
-    print "Chat server started on port " + str(PORT)
+    print ("Chat server started on port " + str(PORT))
  
     while 1:
 
@@ -30,7 +30,7 @@ def chat_server():
             if sock == server_socket: 
                 sockfd, addr = server_socket.accept()
                 SOCKET_LIST.append(sockfd)
-                print "Client (%s, %s) connected" % addr
+                print("Client (%s, %s) connected" % addr)
                  
                 broadcast(server_socket, sockfd, "[%s:%s] entered our chatting room\n" % addr)
              
