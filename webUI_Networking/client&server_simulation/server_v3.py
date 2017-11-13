@@ -6,6 +6,7 @@ _PORT = 9999
 _LISTEN_QUEUE_SIZE=100
 BUFFER_SIZE = 2000
 
+
 # create a socket object
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
@@ -51,7 +52,11 @@ def split_data(data):
 def execution(clientsocket):
 	data=str(receive_message(clientsocket))
 	real_data=data[2:len(data)-1]
-	print(data)
+	data=real_data.split()
+	name=data[0]
+	password=data[1]
+	print('name',name)
+	print('password',password)
 	clientsocket.close()
 
 
@@ -84,6 +89,7 @@ def listen_thread():
 		    # 	print('password is correct')
 		    # 	send_file(clientsocket)
 ###############################################################
+
 		    	
 		    
 
