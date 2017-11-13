@@ -23,7 +23,6 @@ for infile in glob.glob("2.jpg"):
 	zip_archive2.write(infile)
 
 
-
 zip_archive1.close()
 zip_archive2.close()
 
