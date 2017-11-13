@@ -51,11 +51,8 @@ def aquire_user_info():
 	password = str(request.form.get('txtpass'))
 	if not name or not password:
 		return render_template('failure.html')
-	# encrypted_message_name, key_value_name = encryption(name)
-	# encrypted_message_pw, key_value_pw = encryption(password)
-	# message_to_send_name= '$'+str(encrypted_message_name) + ' ' + str(key_value_name)
-	# message_to_send_pw= '?'+str(encrypted_message_pw) + ' ' + str(key_value_pw)
-	return name,password
+	total_info=name+' '+password
+	return total_info
 
 def init_connection(host,port):
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -68,14 +65,11 @@ def login(name=None):
 
 @app.route('/login', methods=['POST'])
 def authentication():
-	(name,pw)=aquire_user_info()
+	info=aquire_user_info()
 	s=init_connection(host,port)
-	send_message(name,s)
+	send_message(info,s)
 	s.close()
-	s=init_connection(host,port)
-	send_message(pw,s)
-	receive_file(s)
-	s.close()
+
 
 	return render_template('button.html')
 
