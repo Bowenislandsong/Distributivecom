@@ -40,6 +40,6 @@ As their name suggested, **Sever Control** runs on server and is in charge of te
 
 **Local Web UI** is built for customers interested lensing their computers for financial benefits. This Local Web UI, acting as a cross platform application, after activation, will automatically interact with server and perform tasks. 
 
-The **Website**, currently hosted at http://medusapys.ml and https://distributive-computing.firebaseapp.com, is a client side UI for customers looking for hiring computers on Medusa.pys clusters. Clients will upload their file for computing on other computers that are part of our cluster nodes. 
+The **Website**, currently hosted at http://medusapys.site and https://distributive-computing.firebaseapp.com, is a client side UI for customers looking for hiring computers on Medusa.pys clusters. Clients will upload their file for computing on other computers that are part of our cluster nodes. 
 
 To communicate with peer and master computers, the project uses **Swarm** to host **Redis** clusters.

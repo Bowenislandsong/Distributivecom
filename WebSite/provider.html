@@ -20,7 +20,7 @@
 							<ul>
 								<li><a href="index.html">Home</a></li>
 								<li class="current"><a href="provider.html">Provider</a></li>
-								<li><a href="user.html">User</a></li>
+								<li><a href="user.php">User</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								<li><a href="login.html">Login</a></li>
 							</ul>
@@ -45,26 +45,28 @@
 				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
 					<div class="col-xs-12 col-sm-10">
 						<h1>Please select the <span class="primary-text">time </span>your host is available:</h1>
-						<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
-							<div class="row col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<h4>Please choose date:</h4>
-								<input type="date" value="2017/10/21"/>
-							</div>
-							<div class="row col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<h4>Please choose time period:</h4>
-								<p>From:</p>
-								<input type="time" value="18:51"/>
-								<p>   To:</p>
-								<input type="time" value="22:26"/>
-							</div>
-							<div>
-								<br>
-								<button type="submit" name="button">Submit</button>
-							</div>
-							<div>
-								<p>Please <a href="login.html">Login</a> before submitting.</p>
-							</div>
-						</div>	
+						<form>
+							<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
+								<div class="center-xs center-sm center-lg middle-xs middle-sm middle-lg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<h4>Please choose date:</h4>
+									<input type="date" value="2017/11/01"/>
+								</div>
+								<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<h4>Please choose time period:</h4>
+									</br>
+									<p>From:</p>
+									<input type="time" value="18:51"/><br></br>
+									<p>   To:</p>
+									<input type="time" value="22:26"/>
+								</div>
+								<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg col-xs-12 col-sm-12 col-md-12 col-lg-12"">
+									<button type="submit" name="button">Submit</button>
+								</div>
+								<div>
+									<p>Please <a href="login.html">Login</a> before submitting.</p></br>
+								</div>
+							</div>	
+						</form>
 					</div>
 				</div>
 			</div>
