@@ -2,7 +2,6 @@
 EC 601 Group Distributive Computing 
 ## Claim
 This Project is devoted to class EC 601 as a Distributive Computing software for the public.
-Project Proposal
 
 ## Project Description
 A cross platform software tool aiming at creating a distributive computing environment for demanding
