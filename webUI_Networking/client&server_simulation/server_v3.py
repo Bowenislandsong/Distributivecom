@@ -85,17 +85,6 @@ def listen_thread():
             # establish a connection
             clientsocket, addr = serversocket.accept()
             threading.Thread(target=execution, args=(clientsocket,)).start()
-#################################################################
-            # data=str(receive_message(clientsocket))
-            # real_data=data[2:len(data)-1]
-
-            # if real_data=='123':
-            # 	print('the name is correct')
-
-            # if real_data=='345':
-            # 	print('password is correct')
-            # 	send_file(clientsocket)
-###############################################################
 
 
 def main():
