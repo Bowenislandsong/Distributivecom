@@ -1,6 +1,6 @@
 # Data split 
 
-## Environment
+## Environment & Running Instruction
 Place the files in a sibling folder as Resource and Coding.
 
 Run with "java -cp "zip4j_1.3.2.jar:commons-io-2.6.jar:" Main <Resourcefoldername> <Codingfoldername> <#ofNodes>"
