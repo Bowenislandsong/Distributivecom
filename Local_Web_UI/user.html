@@ -43,10 +43,24 @@
 	
 		<!--user uploads multiple files, add error ta -->
 		<section id="multi-upload">
-			<form action="./upload-form.php" method="post" enctype="multipart/form-data">
-				<input type="file" name="fileToUpload" id="fileToUpload">
-				<input type="submit" value="Click to Upload" name="submit">
-			</form>
+			<div class="container">
+				<div class="row center-xs center-sm center-md center-lg">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h2><span class="primary-text">Choice 1:</span> Segment the Code Yourself!</h2>
+						<p>Please Upload Your Files Here:</p>
+						<form id="dragUpload" enctype="multipart/form-data" method="post" action="upload-form.php">
+							<div class="file-upload-outline"></div>
+							<h2 class="file-upload-text1"><i class="fa fa-files-o"></i>Drag Your Files Here to Upload Them</h2>
+							<p class="file-upload-choose"> Or choose your files
+								<input type="file" multiple="multiple" class="manual-file-chooser">	
+							</p>
+							<p>Max size for upload is 5GB.</p>
+							<button type="sumbit" >Upload</button>
+						</form>	
+																		
+					</div>
+				</div>
+			</div>
 		</section>	
 
 		<!--upload a single file-->
@@ -58,8 +72,10 @@
 						<p>Please Upload Your File Here:</p>
 						<form id="single-upload-place" enctype="multipart/form-data" method="post" action="upload-form.php">
 							<input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+							<p>Max size for upload is 5GB.</p>
+							<button type="button" onclick="uploadFile()"/>Upload</button>
 						</form>	
-						<button type="sumbit">Upload</button>
+						
 						<br>
 						<br>
 						<br>												
