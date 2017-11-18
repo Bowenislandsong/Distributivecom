@@ -305,7 +305,14 @@ img{
 	margin:0 auto;
 }
 
-	
+/*About Us*/
+
+#information p{
+	text-align: justify;
+}
+#information .claim0{
+	text-align: center;
+}	
 
 
 
