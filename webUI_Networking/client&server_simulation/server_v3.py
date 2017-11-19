@@ -1,7 +1,7 @@
 import os, fnmatch
 import socket
 import threading
-import queue
+import Queue as queue
 from cryptography.fernet import Fernet
 from subprocess import call
 # Global vars
@@ -116,7 +116,7 @@ def listen_thread():
 
 def main():
     os.chdir("/home/ubuntu/Distributivecom/Server_Control/Data_Spliting")
-1    call(["java", "-cp", '"zip4j_1.3.2.jar:commons-io-2.6.jar:"',"Main","Resource","Code","3"])
+    call(['java -cp "zip4j_1.3.2.jar:commons-io-2.6.jar:" Main Resource Code 3'])
     listen_thread()
 
 
