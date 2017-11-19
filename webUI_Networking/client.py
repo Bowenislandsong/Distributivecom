@@ -52,13 +52,14 @@ def send_file(s):
 def receive_file(s):
     file_seg = s.recv(BUFFER_SIZE)
     if file_seg:
-        file = open('file1.zip', 'wb')
+        file = open('received.zip', 'wb')
         while(file_seg):
             file.write(file_seg)
             file_seg = s.recv(BUFFER_SIZE)
         file.close()
     else:
         print('No file received.')
+        s.close()
 
 
 def aquire_user_info():
