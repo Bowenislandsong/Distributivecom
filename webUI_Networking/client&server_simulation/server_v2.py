@@ -1,80 +1,111 @@
-import socket                                         
+# client.py
+
+import os
+import subprocess
+from flask import Flask, render_template, request
+import socket
+import sys
 from cryptography.fernet import Fernet
-#Global vars
-_PORT = 9999
-_LISTEN_QUEUE_SIZE=100
-nlist={} #node list
-BUFFER_SIZE = 2000
 
+BUFFER_SIZE = 1024
 # create a socket object
-serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
 # get local machine name / ip
-host = socket.gethostname()
-
-def decryption(encrypted_msg,key):
-	cipher_suite = Fernet(key)
-	decry_msg=cipher_suite.decrypt(encrypted_msg)
-	decry_msg=str(decry_msg,encoding="utf-8")
-	return decry_msg
-
-def send_file(clientsocket):
-	file=open('file.zip','rb')
-	file_seg=file.read(BUFFER_SIZE)
-	while(file_seg):
-		clientsocket.send(file_seg)
-		file_seg=file.read(BUFFER_SIZE)
-	file.close()
+#host = socket.gethostname()
+host = '168.122.201.25'
+port = 9999
 
 
-def receive_file(clientsocket):
-	file=open('file1.zip','wb')
-	file_seg=clientsocket.recv(BUFFER_SIZE)
-	while(file_seg):
-		file.write(file_seg)
-		file_seg=clientsocket.recv(BUFFER_SIZE)
-	file.close()	
+def encryption(message):
+    message_b = bytes(message, encoding="utf8")  # str to bytes
+    key = Fernet.generate_key()
+    cipher_suite = Fernet(key)
+    cipher_text = cipher_suite.encrypt(message_b)
+    return cipher_text, key
 
-def receive_message(clientsocket):
-	data=clientsocket.recv(BUFFER_SIZE)
-	return data
 
-def split_data(data):
-	real_data=data[1:len(data)]
-	d_split=real_data.split()
-	content=d_split[0]
-	key=d_split[1]
-	content=bytes(content,encoding="utf8")
-	key=bytes(key,encoding="utf8")
-	return content,key
+def send_message(message, s):
+    sendStr = str(message)
+    s.send(sendStr.encode('ascii'))
 
-def listen_thread():                          
-	# bind to the port
-	serversocket.bind((host, _PORT))                                  
-	# queue up to 100 requests
-	while 1:
-		serversocket.listen(_LISTEN_QUEUE_SIZE)	                                    
-		while True:
-		    # establish a connection
-		    clientsocket,addr = serversocket.accept()
-		    data=str(receive_message(clientsocket))
-		    real_data=data[2:len(data)-1]
 
-		    if real_data=='123': 
-		    	print('the name is correct')
-		    	
-		    	
-		    if real_data=='345':
-		    	print('password is correct')
-		    	send_file(clientsocket)
+def receive_message(s):
+    data = s.recv(BUFFER_SIZE)
+    return data
 
-		    	
-		    clientsocket.close()
 
-	    
-	
+# flask initialization
+project_root = os.path.dirname(__file__)
+app = Flask(
+    __name__,
+    template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
+    static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
 
-def main():
-	listen_thread()
 
-if __name__ == "__main__":
-    main()
+def send_file(s):
+    file = open('file.zip', 'rb')
+    file_seg = file.read(BUFFER_SIZE)
+    while(file_seg):
+        s.send(file_seg)
+        file_seg = file.read(BUFFER_SIZE)
+    file.close()
+
+
+def receive_file(s):
+    file_seg = s.recv(BUFFER_SIZE)
+    if file_seg:
+        file = open('received.zip', 'wb')
+        while(file_seg):
+            file.write(file_seg)
+            file_seg = s.recv(BUFFER_SIZE)
+        file.close()
+    else:
+        print('No file received.')
+
+
+def aquire_user_info():
+    name = str(request.form.get('txtuser'))
+    password = str(request.form.get('txtpass'))
+    if not name or not password:
+        return render_template('failure.html')
+    total_info = name + ' ' + password
+    return total_info
+
+
+def init_connection(host, port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((host, port))
+    return s
+
+
+@app.route('/')
+def login(name=None):
+    return render_template('login.html')
+
+
+@app.route('/login', methods=['POST'])
+def authentication():
+    info = aquire_user_info()
+    s = init_connection(host, port)
+    send_message(info, s)
+    data = str(receive_message(s))
+    s.close()
+    real_data = data[2:len(data) - 1]
+    if real_data == 'yes':
+        return render_template('button.html')
+    else:
+        return render_template('failure.html')
+
+
+@app.route('/execute')
+def hello(name=None):
+    #	subprocess.call('python connect.py',shell=True)
+    s = init_connection(host, port)
+    send_message('file', s)
+    receive_file(s)
+    s.close()
+    return render_template('execute.html')
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
+    app.debug
