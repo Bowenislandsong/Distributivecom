@@ -29,13 +29,8 @@ baseDockerfile = '''
 
 def init():
 	global client
-	client = docker.APIClient(base_url='unix://var/run/docker.sock')
-
-	f = BytesIO(baseDockerfile.encode('utf-8'))
-	response = [line for line in client.build(
-		fileobj=f, rm=True, tag='yourname/volume')]
-	print(response)
-
+	client = docker.from_env()
+	client.containers.run("hariharanm/helloworld:test1")
 def main():
 	init()
 

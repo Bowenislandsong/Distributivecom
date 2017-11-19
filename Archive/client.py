@@ -1,6 +1,6 @@
 # client.py  
 import socket
-
+import time
 # create a socket object
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
 
@@ -14,10 +14,11 @@ s.connect((host, port))
 sendStr="Ping\r\n"
 s.send(sendStr.encode('ascii'))
 # Receive no more than 1024 bytes
-tm = s.recv(1024)                                     
-
+tm = s.recv(100)                                     
+#time.sleep(2)
+#tm1 = s.recv(6)
 s.close()
 
-print("REPLY FROM SERVER: %s" % tm.decode('ascii'))
+print("REPLY FROM SERVER: %s %s", tm.decode('ascii') )
 
  
