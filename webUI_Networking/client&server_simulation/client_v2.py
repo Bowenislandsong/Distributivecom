@@ -10,7 +10,8 @@ from cryptography.fernet import Fernet
 BUFFER_SIZE = 1024
 # create a socket object
 # get local machine name / ip
-host = socket.gethostname()
+#host = socket.gethostname()
+host = '168.122.201.25'
 port = 9999
 
 
@@ -50,12 +51,15 @@ def send_file(s):
 
 
 def receive_file(s):
-    file = open('file1.zip', 'wb')
     file_seg = s.recv(BUFFER_SIZE)
-    while(file_seg):
-        file.write(file_seg)
-        file_seg = s.recv(BUFFER_SIZE)
-    file.close()
+    if file_seg:
+        file = open('received.zip', 'wb')
+        while(file_seg):
+            file.write(file_seg)
+            file_seg = s.recv(BUFFER_SIZE)
+        file.close()
+    else:
+        print('No file received.')
 
 
 def aquire_user_info():
