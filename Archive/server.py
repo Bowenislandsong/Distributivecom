@@ -29,13 +29,15 @@ def listen_thread():
 	    clientsocket,addr = serversocket.accept()      
 
 	    print("Got a connection from %s" % str(addr[0]))
-	    reply_str = "Success" + "\r\n"
+	    reply_str = "12" + "\r\n"
 	    rdata={}
 	    rdata['ip']=addr
 	    rdata['time']=time.ctime(time.time())
 	    jsonData=json.dumps(rdata)
 
 
+	    clientsocket.send(reply_str.encode('ascii'))
+	    #time.sleep(1)
 	    clientsocket.send(reply_str.encode('ascii'))
 	    clientsocket.close()
 

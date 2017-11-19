@@ -3,6 +3,7 @@ import socket
 import threading
 import queue
 from cryptography.fernet import Fernet
+from subprocess import call
 # Global vars
 _PORT = 9999
 _LISTEN_QUEUE_SIZE = 100
@@ -14,7 +15,7 @@ serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # get local machine name / ip
 host = socket.gethostname()
-FILEPATH = '/Users/xinli/Desktop/webUI'
+FILEPATH = '/home/ubuntu/Distributivecom/Server_Control/Data_Spliting'
 
 
 def decryption(encrypted_msg, key):
@@ -97,7 +98,7 @@ def listen_thread():
     filelist = []
     listOfFiles = os.listdir(FILEPATH)
     listOfFiles.sort()
-    pattern = 'file*'
+    pattern = 'Distribute*'
     for entry in listOfFiles:
         if fnmatch.fnmatch(entry, pattern):
             filelist.append(entry)
@@ -114,6 +115,8 @@ def listen_thread():
 
 
 def main():
+    os.chdir("/home/ubuntu/Distributivecom/Server_Control/Data_Spliting")
+1    call(["java", "-cp", '"zip4j_1.3.2.jar:commons-io-2.6.jar:"',"Main","Resource","Code","3"])
     listen_thread()
 
 
