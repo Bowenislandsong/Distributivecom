@@ -113,10 +113,10 @@ def listen_thread():
             clientsocket, addr = serversocket.accept()
             threading.Thread(target=execution, args=(clientsocket,q,filelist)).start()
 
-
+command_str='java -cp "zip4j_1.3.2.jar:commons-io-2.6.jar:" Main Resource Code 2'
 def main():
     os.chdir("/home/ubuntu/Distributivecom/Server_Control/Data_Spliting")
-    call(['java -cp "zip4j_1.3.2.jar:commons-io-2.6.jar:" Main Resource Code 3'])
+    os.system(command_str)
     listen_thread()
 
 
