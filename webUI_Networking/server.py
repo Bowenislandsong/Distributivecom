@@ -1,18 +1,20 @@
-import os
+import os, fnmatch
 import socket
 import threading
+import queue
 from cryptography.fernet import Fernet
 # Global vars
 _PORT = 9999
 _LISTEN_QUEUE_SIZE = 100
 BUFFER_SIZE = 2000
-
-
+q = queue.Queue()
+q.put(0)
 # create a socket object
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # get local machine name / ip
 host = socket.gethostname()
+FILEPATH = '/Users/xinli/Desktop/webUI'
 
 
 def decryption(encrypted_msg, key):
@@ -22,16 +24,26 @@ def decryption(encrypted_msg, key):
     return decry_msg
 
 
-def send_file(clientsocket):
-    if os.path.isfile('test.zip'):
-        file = open('test.zip', 'rb')
+def send_file(clientsocket,q,filelist):
+    # print(filelist)
+    # print('test')
+    # if not q.empty():
+    counter = q.get()
+
+    # print(counter)
+    if len(filelist) > 0 and len(filelist) > counter:
+        filename = filelist[counter]
+        file = open(filename, 'rb')
         file_seg = file.read(BUFFER_SIZE)
         while(file_seg):
             clientsocket.send(file_seg)
             file_seg = file.read(BUFFER_SIZE)
         file.close()
+        counter = counter + 1
+        q.put(counter)
     else:
         print('No such file')
+        q.put(counter)
 
 
 
@@ -64,12 +76,13 @@ def split_data(data):
     return content, key
 
 
-def execution(clientsocket):
+def execution(clientsocket,q,filelist):
+    # initialize a counter for file transfer
     data = str(receive_message(clientsocket))
     real_data = data[2:len(data) - 1]
     if real_data == 'file':
-        send_file(clientsocket)
-
+        print(real_data)
+        send_file(clientsocket,q,filelist)
     else:
         mdata = real_data.split()
         name = mdata[0]
@@ -81,6 +94,14 @@ def execution(clientsocket):
 
 
 def listen_thread():
+    filelist = []
+    listOfFiles = os.listdir(FILEPATH)
+    listOfFiles.sort()
+    pattern = 'file*'
+    for entry in listOfFiles:
+        if fnmatch.fnmatch(entry, pattern):
+            filelist.append(entry)
+    print(filelist)
     # bind to the port
     serversocket.bind((host, _PORT))
     # queue up to 100 requests
@@ -89,7 +110,7 @@ def listen_thread():
         while True:
             # establish a connection
             clientsocket, addr = serversocket.accept()
-            threading.Thread(target=execution, args=(clientsocket,)).start()
+            threading.Thread(target=execution, args=(clientsocket,q,filelist)).start()
 
 
 def main():
