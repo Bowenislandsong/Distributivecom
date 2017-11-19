@@ -51,5 +51,4 @@ def register():
     return render_template('register.html')
 
 if __name__ == '__main__':
-    app.secret_key = 'mysecret'
     app.run(debug=True)
