@@ -10,7 +10,7 @@ from cryptography.fernet import Fernet
 BUFFER_SIZE = 1024
 # create a socket object
 # get local machine name / ip
-host = 18.216.9.67
+host = socket.gethostname()
 port = 9999
 
 
@@ -36,8 +36,8 @@ def receive_message(s):
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
-    template_folder='templates/',
-    static_folder='static')
+    template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
+    static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
 
 
 def send_file(s):
