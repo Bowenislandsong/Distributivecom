@@ -11,7 +11,7 @@ BUFFER_SIZE = 1024
 # create a socket object
 # get local machine name / ip
 #host = socket.gethostname()
-host = '168.122.201.25'
+host = '18.216.9.67'
 port = 9999
 
 
@@ -37,17 +37,35 @@ def receive_message(s):
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
-    template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
-    static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
+    template_folder='/home/hari/templates',
+    static_folder='/home/hari/static')
 
 
 def send_file(s):
-    file = open('file.zip', 'rb')
+    file = open('result.zip', 'rb')
     file_seg = file.read(BUFFER_SIZE)
     while(file_seg):
         s.send(file_seg)
         file_seg = file.read(BUFFER_SIZE)
     file.close()
+
+unzip_cmd='unzip received.zip'
+run_cmd='java -jar *jar'
+def run_program():
+    os.system(unzip_cmd)
+    try:
+        os.chdir("0")
+    except OSError:
+        print("")
+    try:
+        os.chdir("1")
+    except OSError:
+        print("")
+    #os.system(run_cmd)
+    os.system("touch result.zip")
+    
+
+
 
 
 def receive_file(s):
@@ -98,10 +116,13 @@ def authentication():
 
 @app.route('/execute')
 def hello(name=None):
-    #	subprocess.call('python connect.py',shell=True)
+    #   subprocess.call('python connect.py',shell=True)
     s = init_connection(host, port)
     send_message('file', s)
     receive_file(s)
+    run_program()
+    send_message("result")
+    send_file(s)
     s.close()
     return render_template('execute.html')
 
