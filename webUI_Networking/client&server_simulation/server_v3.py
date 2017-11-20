@@ -56,6 +56,7 @@ def receive_file(s):
             file.write(file_seg)
             file_seg = s.recv(BUFFER_SIZE)
         file.close()
+        print(os.stat('result.zip'))
     else:
         print('No file received.')
 
@@ -82,22 +83,21 @@ def split_data(data):
 
 def execution(clientsocket,q,filelist):
     # initialize a counter for file transfer
-    if (data = str(receive_message(clientsocket)))
-        real_data = data
+    data = str(receive_message(clientsocket))
+#    real_data = data[2:len(data) - 1]
+    real_data = data
+    print(real_data)
+    if real_data == 'result':
+	    receive_file(clientsocket)
+    elif real_data == 'file':
         print(real_data)
-        if real_data == 'result':
-    	receive_file(clientsocket)
-        elif real_data == 'file':
-            print(real_data)
-            send_file(clientsocket,q,filelist)
-        else:
-            mdata = real_data.split()
-            name = mdata[0]
-            password = mdata[1]
-            if name == '123' and password == '456':
-                send_message('yes', clientsocket)
+        send_file(clientsocket,q,filelist)
     else:
-        receive_file()
+        mdata = real_data.split()
+        name = mdata[0]
+        password = mdata[1]
+        if name == '123' and password == '456':
+            send_message('yes', clientsocket)
 
     clientsocket.close()
 
