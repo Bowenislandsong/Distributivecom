@@ -6,6 +6,7 @@ from cryptography.fernet import Fernet
 from subprocess import call
 # Global vars
 _PORT = 9999
+_PORT1 = 1111
 _LISTEN_QUEUE_SIZE = 100
 BUFFER_SIZE = 2000
 q = queue.Queue()
@@ -13,6 +14,7 @@ q.put(0)
 # create a socket object
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
 # get local machine name / ip
 host = socket.gethostname()
 FILEPATH = '/home/ubuntu/Distributivecom/Server_Control/Data_Spliting'
@@ -48,7 +50,11 @@ def send_file(clientsocket,q,filelist):
 
 
 
-def receive_file(s):
+def receive_file():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    host1=socket.gethostname()
+    s.bind((host1,_PORT1))
     file_seg = s.recv(BUFFER_SIZE)
     if file_seg:
         file = open('result.zip', 'wb')
@@ -88,7 +94,7 @@ def execution(clientsocket,q,filelist):
     real_data = data
     print(real_data)
     if real_data == 'result':
-	    receive_file(clientsocket)
+	    receive_file()
     elif real_data == 'file':
         print(real_data)
         send_file(clientsocket,q,filelist)
@@ -113,6 +119,7 @@ def listen_thread():
     print(filelist)
     # bind to the port
     serversocket.bind((host, _PORT))
+    
     # queue up to 100 requests
     while True:
         serversocket.listen(_LISTEN_QUEUE_SIZE)
