@@ -120,10 +120,12 @@ def hello(name=None):
     s = init_connection(host, port)
     send_message('file', s)
     receive_file(s)
+    s.close()
     run_program()
-    send_message("result")
+    s = init_connection(host, port)
     send_file(s)
     s.close()
+
     return render_template('execute.html')
 
 
