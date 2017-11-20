@@ -1,0 +1,239 @@
+body{
+	font-family: 'Open-sans', sans-serif;
+	font-size: 17px;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	width: 100%;
+}
+
+.container{
+	margin:auto;
+}
+/*common classes*/
+.primary-text{
+	color:#484891;
+}
+
+.primary-background{
+	background:#484891;
+}
+
+/* Header */
+#main-header{
+	border-bottom: 1px solid #484891;
+}
+
+/* subheader */
+#subheader{
+	font-size: 15px;
+}
+
+/* Navbar */
+#navbar{
+	text-transform:uppercase;
+}
+
+#navbar li{
+	display:inline;
+	padding-right:20px;
+	list-style: none;
+}
+
+#navbar a{
+	text-decoration:none;
+	color:#888;
+}
+
+#navbar li.current a, #navbar a:hover{
+	color:#484891;
+	border-bottom: 3px solid #484891;
+	padding-bottom: 3px;
+}
+
+/* showcase */
+#showcase{
+	background: url('../images/background1.jpg') no-repeat center center;
+	border-bottom: 1px solid #484891
+	margin-bottom:30px;
+	opacity: 0.85;
+}
+
+#showcase .row{
+	height: 600px;
+}
+
+#showcase h1{
+	font-size: 50px;
+	margin:0;
+	padding-bottom: 20px;
+}
+
+#showcase p{
+	color:#484891;
+	margin:0;
+}
+
+#showcase .showcase-content{
+	background: #E6E6F2;
+	color:#333;
+	border-radius: 90px;
+	padding: 40px;
+	opacity: 0.90;
+}
+
+
+/* features */
+#features h2{
+	font-size: 35px;
+	margin: 0;
+	padding-top: 40px;
+	padding-bottom: 10px;
+}
+
+#features p{
+	color:#888;
+	margin:0;
+	margin-bottom: 40px;
+}
+
+#features .fa{
+	font-size: 60px;
+	color:#484891;
+}
+
+#project{
+	background: #333;
+	color: #fff;
+	padding: 10px 0;
+} 
+
+#project h4{
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+#project ul{
+	padding: 0;
+	list-style: none;
+	line-height:2em;
+}
+
+/* footer */
+#main-footer{
+	background:#484891;
+	color:#fff;
+}
+
+/* page */
+#page{
+	margin-bottom: 40px; 
+}
+
+/* contact */
+.contact form{
+	background: #333;
+	color: #fff;
+	padding:20px;
+}
+
+.contact form input[type="text"]{
+	width: 50%;
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+.contact form textarea{
+	width: 50%;
+	height: 100px;
+}
+
+.contact form button{
+	width: 50%;
+	padding: 10px 0;
+	border: 0;
+	background: #222;
+	color:#fff;
+}
+
+.contact form label{
+	text-transform: uppercase;
+}
+
+/* login */
+#login{
+	padding:20px;
+    margin:0;
+    background:#fff;    
+}
+
+#login h2{
+	text-align: center;
+}
+
+#login input{
+	padding: 2px;
+	width:20%;
+	height: 30px;
+}
+
+#login button{
+	width: 10%;
+	height: 20%;
+	padding: 10px 0;
+	font-size: 20px;
+	border: 0;
+	background: #484891;
+	color:#fff;
+}
+
+/* user upload */
+#upload form{
+	background: #484891;
+	width:600px;
+	height: 300px;
+	padding: 10px 0;
+	margin:0 auto;
+}
+
+#upload label{
+	font-size: 20px;
+	color:#fff;
+}
+
+#upload button{
+	width: 20%;
+	height: 30%;
+	padding: 10px 0;
+	font-size: 20px;
+	border: 0;
+	background: #fff;
+	color:#484891;
+}
+
+	
+
+
+
+
+
+
+
+
+/* media queries */
+@media(max-width: 800px){
+	#showcase h1{
+		font-size: 30px;
+	}
+
+}
+
+@media(max-width: 500px){
+	#showcase .showcase-content{
+		font-size: 40px 10px;
+	}
+
+}

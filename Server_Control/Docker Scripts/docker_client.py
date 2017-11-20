@@ -26,11 +26,11 @@ baseDockerfile = '''
 
 
 
-
+https://github.com/docker/docker-install/blob/master/install.sh
 def init():
 	global client
 	client = docker.from_env()
-	client.containers.run("hariharanm/helloworld:test1")
+	climent.containers.run("hariharanm/helloworld:test1")
 def main():
 	init()
 

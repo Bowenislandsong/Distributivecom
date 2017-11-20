@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Medusa.pys</title>
+		<title>Provider Medusa.pys</title>
 		<link rel="stylesheet" href="css/flexboxgrid.css">
 		<link rel="stylesheet" href="css/font-awesome.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -11,68 +11,95 @@
 		<!--Header-->
 		<header id="main-header">
 			<div class="container">
-				<div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle-md middle-lg">
+				<div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle- md middle-lg">
 					<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
 						<h1><span class="primary-text">Medusa</span>.pys</h1>
 					</div>
 					<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
 						<nav id="navbar">
 							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
-								<li><a href="provider.html">Provider</a></li>
+								<li><a href="index.html">Home</a></li>
+								<li class="current"><a href="provider.html">Provider</a></li>
 								<li><a href="user.html">User</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								<li><a href="login.html">Login</a></li>
 							</ul>
 						</nav>						
-					</div>
 				</div>
-			
+			</div>	
 		</header>
 
-	<!--showcase-->
-		<section id="showcase">
+	<section id="subheader">
 			<div class="container">
-				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
-					<div class="col-xs-12 col-sm-10 col-md-10 col-lg-7 showcase-content">
-						<h1>Weclome to <span class="primary-text">Medusa</span>.pys!</h1>
-						<p>The best distributing computation platform for Data Scientists!</p>
-					</div>
-				</div>
-			</div>
-		</section>	
-
-		<!--project features-->
-		<section id="features">
-			<div class="container">
-				<div class="row center-xs center-sm center-md center-lg bottom-xs bottom-sm bottom-md bottom-lg">
+				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h2>Core Features</h2>
-						<p>What's Included</p>
-						<!--Add some simple and ugly icons-->
-						<div class="row center-xs center-sm center-md center-lg">
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-								<i class="fa fa-support"></i><br>
-								<h4>Multi-OS</h4>
-								<p>Support Mac OS, Windows,and Linux Operating Systenms</p>	
-							</div>
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-								<i class="fa fa-usd"></i><br>
-								<h4>Earn Money</h4>
-								<p>Contribute the GPUs of the host to gain real money</p>	
-							</div>
-							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-								<i class="fa fa-hotel"></i><br>
-								<h4>Use Spare Time</h4>
-								<p>Utilize the spare time to do meaningful things</p>	
-							</div>							
-						</div>						
-					</div>
+						<h1>Provider</h1>						
+					</div>					
 				</div>				
 			</div>			
 		</section>
 
-		<!--need more infomation-->
+		<!--choose time slots-->
+		<section id="choosetime">
+			<div class="container">
+				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
+					<div class="col-xs-12 col-sm-10">
+						<h1>Please select the <span class="primary-text">time </span>your host is available:</h1>
+						<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
+							<div class="row col-xs-12 col-sm-6 col-md-6 col-lg-6">
+								<h4>Please choose date:</h4>
+								<input type="date" value="2017/10/21"/>
+							</div>
+							<div class="row col-xs-12 col-sm-6 col-md-6 col-lg-6">
+								<h4>Please choose time period:</h4>
+								<p>From:</p>
+								<input type="time" value="18:51"/>
+								<p>   To:</p>
+								<input type="time" value="22:26"/>
+							</div>
+							<div>
+								<br>
+								<button type="submit" name="button">Submit</button>
+							</div>
+							<div>
+								<p>Please <a href="login.html">Login</a> before submitting.</p>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!--download section-->
+		<section id="download">
+			<div class="container">
+				<div class="row center-xs center-sm center-md center-lg">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h2>Downloads</h2>
+						<p>Choose according to your OS</p>
+						<!--please change the stupid sentence above, thanks!-->
+						<div class="row center-xs center-sm center-md center-lg">
+							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+								<i class="fa fa-apple"></i><br>
+								<h4>Mac OS</h4>
+								<p>Click to download Version 1.0.0</p>	
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+								<i class="fa fa-windows"></i><br>
+								<h4>Windows</h4>
+								<p>Click to download Version 1.0.0</p>	
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+								<i class="fa fa-linux"></i><br>
+								<h4>Linux</h4>
+								<p>Click to download Version 1.0.0</p>	
+							</div>							
+						</div>						
+					</div>
+				</div>
+			</div>			
+		</section>
 
 		<!--Project-->
 		<section id="project">

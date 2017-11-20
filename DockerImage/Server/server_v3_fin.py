@@ -14,7 +14,8 @@ serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # get local machine name / ip
 host = socket.gethostname()
-FILEPATH="Data_Spliting/"
+FILEPATH = os.getcwd()+'/Data_Spliting/'
+
 
 def decryption(encrypted_msg, key):
     cipher_suite = Fernet(key)
@@ -32,7 +33,7 @@ def send_file(clientsocket,q,filelist):
     # print(counter)
     if len(filelist) > 0 and len(filelist) > counter:
         filename = filelist[counter]
-        file = open(filename, 'rb')
+        file = open(FILEPATH+filename, 'rb')
         file_seg = file.read(BUFFER_SIZE)
         while(file_seg):
             clientsocket.send(file_seg)
@@ -47,7 +48,7 @@ def send_file(clientsocket,q,filelist):
 
 
 def receive_file(clientsocket):
-    file = open('file1.zip', 'wb')
+    file = open('received.zip', 'wb')
     file_seg = clientsocket.recv(BUFFER_SIZE)
     while(file_seg):
         file.write(file_seg)
@@ -103,7 +104,7 @@ def listen_thread():
     filelist = []
     listOfFiles = os.listdir(FILEPATH)
     listOfFiles.sort()
-    pattern = 'file*'
+    pattern = 'Distribute*'
     for entry in listOfFiles:
         if fnmatch.fnmatch(entry, pattern):
             filelist.append(entry)

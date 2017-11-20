@@ -2,10 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Contact Medusa.pys</title>
-		<link rel="stylesheet" href="css/flexboxgrid.css">
-		<link rel="stylesheet" href="css/font-awesome.css">
-		<link rel="stylesheet" href="css/style.css">
+		<title>Login Medusa.pys</title>
+		<link rel="stylesheet" href="{{url_for('static' , filename='css/flexboxgrid.css')}}">
+		<link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.css')}}">
+		<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+		
 	</head>
 	<body>
 		<!--Header-->
@@ -21,52 +22,67 @@
 								<li><a href="index.html">Home</a></li>
 								<li><a href="Provider.html">Provider</a></li>
 								<li><a href="user.html">User</a></li>
-								<li class="current"><a href="contact.html">Contact</a></li>
-								<li><a href="login.html">Login</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								<li class="current"><a href="login.html">Login</a></li>
 							</ul>
 						</nav>						
 				</div>
-			</div>
-			
+			</div>			
 		</header>
 
 		<section id="subheader">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h1>Contact</h1>						
+						<h1>Login</h1>						
 					</div>					
 				</div>				
 			</div>			
 		</section>
+<!--
+		<div class="container" id="login">
+    		<div class="row">
+      			<div class="col-lg-12 text-center">
+ 
+        			<h2>Welcome to Medusa</h2>
+        			<button type="button" class="btn btn-primary" onclick="signIn();"><i class="fa fa-google-plus"></i> Sign-In With Google</button>
 
-		<!--main page-->
-		<section id="page" class="contact">
+      			</div>
+			</div>
+  		</div>
+-->
+		<!--login-->
+		
+		<section id="login">
 			<div class="container">
-				<div class="row center-xs center-sm center-md center-lg ">
+				<div class="row center-xs center-sm center-md center-lg">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h2><span class="primary-text">Get</span> In Touch</h2>
-						<p>Please use this form to contact us</p>
-						<form>
+						<h2>Login here please</h2>
+						<form action="/login" method=post>
 							<div>
-								<label for="name">Name</label><br>
-								<input type="text" name="name">
+								<input type="text" name="txtuser" id="txtuser" class="input" placeholder="User Name">
+								<br>
+								<br>
 							</div>
 							<div>
-								<label for="email">Email</label><br>
-								<input type="text" name="email">
+								<input type="password" name="txtpass" id="txtpass" class="input" placeholder="Password">
+								<br>
+								<br>
 							</div>
 							<div>
-								<label for="message">Message</label><br>
-								<textarea name="message"></textarea>
+								<button type="submit" name="btnlogin">Login</button>
+								<br>
 							</div>
-								<button type="submit" name="button">Submit</button>
-						</form>
-					
-					</div>
-			
+							<p>New here? Register Now!</p>
+						</form>	
+					</div>		
+				</div>
+			</div>	
 		</section>
-		<!--Project-->
+		
+		
+
+	<!--Project-->
 		<section id="project">
 			<div class="container">
 				<div class="row">
@@ -100,8 +116,19 @@
 				</div>
 			</div>
 		</footer>
-
-
-
-
 	</body>
+<!--
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAC_TQcZx0LNaYG6lHD1DDHTb_cw5M8IEQ",
+    authDomain: "distributive-computing.firebaseapp.com",
+    databaseURL: "https://distributive-computing.firebaseio.com",
+    projectId: "distributive-computing",
+    storageBucket: "distributive-computing.appspot.com",
+    messagingSenderId: "260081266013"
+  };
+  firebase.initializeApp(config);
+</script>
+-->

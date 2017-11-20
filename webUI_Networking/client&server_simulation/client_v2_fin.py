@@ -37,7 +37,7 @@ project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
     template_folder='templates/',
-    static_folder='static/')
+    static_folder='static')
 
 
 def send_file(s):
