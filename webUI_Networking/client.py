@@ -41,7 +41,7 @@ app = Flask(
 
 
 def send_file(s):
-    file = open('file.zip', 'rb')
+    file = open('received.zip', 'rb')
     file_seg = file.read(BUFFER_SIZE)
     while(file_seg):
         s.send(file_seg)
@@ -98,10 +98,13 @@ def authentication():
 
 @app.route('/execute')
 def hello(name=None):
-    #	subprocess.call('python connect.py',shell=True)
+    #   subprocess.call('python connect.py',shell=True)
     s = init_connection(host, port)
     send_message('file', s)
     receive_file(s)
+    s.close()
+    s = init_connection(host, port)
+    send_file(s)
     s.close()
     return render_template('execute.html')
 

@@ -77,11 +77,18 @@ def split_data(data):
 
 def execution(clientsocket,q,filelist):
     # initialize a counter for file transfer
-    data = str(receive_message(clientsocket))
+    old_data = receive_message(clientsocket)
+    data=str(old_data)
+    print(str(data[2:4]))
     real_data = data[2:len(data) - 1]
     if real_data == 'file':
         print(real_data)
         send_file(clientsocket,q,filelist)
+    elif (str(data[2:4]) == 'PK'):
+        print('111111111111')
+        file = open('result_server.zip', 'wb')
+        file.write(old_data)
+        file.close()
     else:
         mdata = real_data.split()
         name = mdata[0]
