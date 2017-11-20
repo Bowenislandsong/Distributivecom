@@ -8,13 +8,16 @@ _PORT = 9999
 _LISTEN_QUEUE_SIZE = 100
 BUFFER_SIZE = 2000
 q = queue.Queue()
+p = queue.Queue()
 q.put(0)
+p.put(0)
 # create a socket object
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # get local machine name / ip
 host = socket.gethostname()
-FILEPATH="Data_Spliting/"
+FILEPATH = '/Users/xinli/Desktop/webUI'
+
 
 def decryption(encrypted_msg, key):
     cipher_suite = Fernet(key)
@@ -75,7 +78,7 @@ def split_data(data):
     return content, key
 
 
-def execution(clientsocket,q,filelist):
+def execution(clientsocket,q,filelist,p):
     # initialize a counter for file transfer
     old_data = receive_message(clientsocket)
     data=str(old_data)
@@ -86,9 +89,13 @@ def execution(clientsocket,q,filelist):
         send_file(clientsocket,q,filelist)
     elif (str(data[2:4]) == 'PK'):
         print('111111111111')
-        file = open('result_server.zip', 'wb')
+        cout = p.get()
+        fname = 'result_server' + str(cout) + '.zip'
+        file = open(fname, 'wb')
         file.write(old_data)
         file.close()
+        cout = cout + 1
+        p.put(cout)
     else:
         mdata = real_data.split()
         name = mdata[0]
@@ -116,7 +123,7 @@ def listen_thread():
         while True:
             # establish a connection
             clientsocket, addr = serversocket.accept()
-            threading.Thread(target=execution, args=(clientsocket,q,filelist)).start()
+            threading.Thread(target=execution, args=(clientsocket,q,filelist,p)).start()
 
 
 def main():
