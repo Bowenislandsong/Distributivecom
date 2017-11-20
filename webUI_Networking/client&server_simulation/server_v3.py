@@ -48,13 +48,16 @@ def send_file(clientsocket,q,filelist):
 
 
 
-def receive_file(clientsocket):
-    file = open('file1.zip', 'wb')
-    file_seg = clientsocket.recv(BUFFER_SIZE)
-    while(file_seg):
-        file.write(file_seg)
-        file_seg = clientsocket.recv(BUFFER_SIZE)
-    file.close()
+def receive_file(s):
+    file_seg = s.recv(BUFFER_SIZE)
+    if file_seg:
+        file = open('result.zip', 'wb')
+        while(file_seg):
+            file.write(file_seg)
+            file_seg = s.recv(BUFFER_SIZE)
+        file.close()
+    else:
+        print('No file received.')
 
 
 def send_message(message, clientsocket):
@@ -81,9 +84,11 @@ def execution(clientsocket,q,filelist):
     # initialize a counter for file transfer
     data = str(receive_message(clientsocket))
 #    real_data = data[2:len(data) - 1]
-    real_data = datas
+    real_data = data
     print(real_data)
-    if real_data == 'file':
+    if real_data == 'result':
+	receive_file(clientsocket)
+    elif real_data == 'file':
         print(real_data)
         send_file(clientsocket,q,filelist)
     else:
