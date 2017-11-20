@@ -80,7 +80,8 @@ def split_data(data):
 def execution(clientsocket,q,filelist):
     # initialize a counter for file transfer
     data = str(receive_message(clientsocket))
-    real_data = data[2:len(data) - 1]
+#    real_data = data[2:len(data) - 1]
+    real_data = datas
     print(real_data)
     if real_data == 'file':
         print(real_data)
