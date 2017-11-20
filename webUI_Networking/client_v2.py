@@ -13,7 +13,6 @@ BUFFER_SIZE = 1024
 #host = socket.gethostname()
 host = '18.216.9.67'
 port = 9999
-port1= 1111
 
 
 def encryption(message):
@@ -124,11 +123,8 @@ def hello(name=None):
     s.close()
     run_program()
     s = init_connection(host, port)
-    send_message("result",s)
+    send_file(s)
     s.close()
-    s1 = init_connection(host, port1)
-    send_file(s1)
-    s1.close()
 
     return render_template('execute.html')
 
