@@ -81,6 +81,7 @@ def execution(clientsocket,q,filelist):
     # initialize a counter for file transfer
     data = str(receive_message(clientsocket))
     real_data = data[2:len(data) - 1]
+    print(real_data)
     if real_data == 'file':
         print(real_data)
         send_file(clientsocket,q,filelist)
