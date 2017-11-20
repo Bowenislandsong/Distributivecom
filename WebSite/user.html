@@ -23,6 +23,7 @@
 								<li class="current"><a href="user.html">User</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								<li><a href="login.html">Login</a></li>
+								<li><a href="aboutus.html">About Us</a></li>
 							</ul>
 						</nav>						
 					</div>
@@ -41,29 +42,60 @@
 		</section>
 
 	
-		<!--user uploads multiple files, add error ta -->
-		<section id="multi-upload">
-			<form action = "http://medusapys.site/sources" method = "POST"
-         		enctype = "multipart/form-data">
-         		<input type = "file" name = "file" />
-         		<input type = "submit"/>
-     		</form>
-		</section>	
-
-		<!--upload a single file-->
+		<!--user uploads single file, add error tolerance later -->
 		<section id="single-upload">
 			<div class="container">
-				<div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-lg">
+				<div class="row center-xs center-sm center-md center-lg">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h2><span class="primary-text">Choice 2:</span> Let us segment for you!</h2>
-						<p>Please Upload Your File Here:</p>
-						<form id="single-upload-place" enctype="multipart/form-data" method="post" action="upload-form.php">
-							<input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+						<h2><span class="primary-text">Choice 1:</span> Let Us Segment the Code For You!</h2>
+						<p>Please Upload Your Code Here:</p>
+						<form id="singleUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
+							<p class="code-upload-choose"> Choose your file
+								<input type="file" name="file">	
+							</p>
+							<p>Max size for upload is 5GB.</p>
+							<button type="sumbit" >Upload</button>
 						</form>	
-						<button type="sumbit">Upload</button>
+						<p>Please Upload Your Resource Here:</p>
+						<form id="singleResoureUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
+							<p class="resource-upload-choose"> Choose your file
+								<input type="file" name="file">	
+							</p>
+							<p>Max size for upload is 5GB.</p>
+							<button type="sumbit" >Upload </button>
+						</form>																		
+					</div>
+					
+
+				</div>
+			</div>
+		</section>	
+
+		<!--upload a multiple files, add error tolerance later-->
+		<section id="single-upload">
+			<div class="container">
+				<div class="row center-xs center-sm center-md center-lg">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h2><span class="primary-text">Choice 2:</span> Segment the Code Yourself!</h2>
+						<p>Please Upload Your Files Here:</p>
+						<form id="multiUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
+							<p class="file-upload-choose"> Choose your files
+								<input type="file" name="file">	
+							</p>
+							<p>Max size for upload is 5GB.</p>
+							<button type="sumbit" >Upload</button>
+						</form>	
+						<p>Please Upload Your Resource Here:</p>
+						<form id="multiUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
+							<p class="file-upload-choose"> Choose your files
+								<input type="file" name="file">	
+							</p>
+							<p>Max size for upload is 5GB.</p>
+							<button type="sumbit" >Upload</button>
+						</form>						
 						<br>
 						<br>
-						<br>												
+						<br>																	
 					</div>
 				</div>
 			</div>
