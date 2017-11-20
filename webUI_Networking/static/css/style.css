@@ -15,16 +15,16 @@ img{
 }
 /*common classes*/
 .primary-text{
-	color:#484891;
+	color:#556B2F;
 }
 
 .primary-background{
-	background:#484891;
+	background:#556B2F;
 }
 
 /* Header */
 #main-header{
-	border-bottom: 1px solid #484891;
+	border-bottom: 1px solid #556B2F;
 }
 
 /* subheader */
@@ -49,15 +49,15 @@ img{
 }
 
 #navbar li.current a, #navbar a:hover{
-	color:#484891;
-	border-bottom: 3px solid #484891;
+	color:#556B2F;
+	border-bottom: 3px solid #556B2F;
 	padding-bottom: 3px;
 }
 
 /* showcase */
 #showcase{
 	background: url('../images/background1.jpg') no-repeat center center;
-	border-bottom: 1px solid #484891
+	border-bottom: 1px solid #556B2F;
 	margin-bottom:30px;
 	opacity: 0.85;
 }
@@ -73,7 +73,7 @@ img{
 }
 
 #showcase p{
-	color:#484891;
+	color:#556B2F;
 	margin:0;
 }
 
@@ -102,7 +102,7 @@ img{
 
 #features .fa{
 	font-size: 60px;
-	color:#484891;
+	color:#556B2F;
 }
 
 #project{
@@ -124,7 +124,7 @@ img{
 
 /* footer */
 #main-footer{
-	background:#484891;
+	background:#556B2F;
 	color:#fff;
 }
 
@@ -186,13 +186,13 @@ img{
 	padding: 10px 0;
 	font-size: 20px;
 	border: 0;
-	background: #484891;
+	background: #556B2F;
 	color:#fff;
 }
 
 /* user upload */
 #upload form{
-	background: #484891;
+	background: #556B2F;
 	width:600px;
 	height: 300px;
 	padding: 10px 0;
@@ -211,7 +211,7 @@ img{
 	font-size: 20px;
 	border: 0;
 	background: #fff;
-	color:#484891;
+	color:#556B2F;
 }
 
 	
