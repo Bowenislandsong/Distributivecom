@@ -14,7 +14,7 @@ serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # get local machine name / ip
 host = socket.gethostname()
-FILEPATH = '/Users/yangzhiyi/Desktop/webUI_1/simulation'
+FILEPATH = 'Data_Spliting/'
 
 
 def decryption(encrypted_msg, key):
