@@ -201,32 +201,32 @@ img{
 	font-size: 15px;
 	font-weight: 400;
 }
-#multi-upload form{
+#single-upload form{
 	background: #FCFCFC;
 	width:800px;
-	height: 300px;
+	height: 150px;
 	padding: 10px 0;
 	margin:0 auto;
 }
 
-.file-upload-text1{
+.single-upload-text1{
 	font-size: 25px;
 	color:#8E8E8E;
 	margin-top: 13%;
 }
 
-.file-upload-choose{
+.code-upload-choose{
 	font-size: 20px;
 	color:#8E8E8E;
 	padding: 2px;
 	margin-left: 40px;
 }
 
-#multi-upload button{
+#single-upload button{
 	margin-top: 10px;
 	width: 80px;
 	height: 40px;
-	font-size: 20px;
+	font-size: 15px;
 	background: #484891;
 	color:#fff;
 }
@@ -247,11 +247,12 @@ img{
 
 #single-upload button{
 	margin-top: 10px;
-	width: 80px;
-	height: 40px;
-	font-size: 20px;
+	width: 60px;
+	height: 30px;
+	font-size: 13px;
 	background: #484891;
 	color:#fff;
+	
 }
 
 
@@ -305,14 +306,14 @@ img{
 	margin:0 auto;
 }
 
-	
+/*About Us*/
 
-
-
-
-
-
-
+#information p{
+	text-align: justify;
+}
+#information .claim0{
+	text-align: center;
+}	
 
 /* media queries */
 @media(max-width: 800px){
