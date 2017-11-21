@@ -15,16 +15,16 @@ img{
 }
 /*common classes*/
 .primary-text{
-	color:#556B2F;
+	color:#FF4500;
 }
 
 .primary-background{
-	background:#556B2F;
+	background:#1E90FF;
 }
 
 /* Header */
 #main-header{
-	border-bottom: 1px solid #556B2F;
+	border-bottom: 1px solid #1E90FF;
 }
 
 /* subheader */
@@ -49,15 +49,15 @@ img{
 }
 
 #navbar li.current a, #navbar a:hover{
-	color:#556B2F;
-	border-bottom: 3px solid #556B2F;
+	color:#87CEEB;
+	border-bottom: 3px solid #87CEEB;
 	padding-bottom: 3px;
 }
 
 /* showcase */
 #showcase{
 	background: url('../images/background1.jpg') no-repeat center center;
-	border-bottom: 1px solid #556B2F;
+	border-bottom: 1px solid #87CEEB;
 	margin-bottom:30px;
 	opacity: 0.85;
 }
@@ -73,12 +73,12 @@ img{
 }
 
 #showcase p{
-	color:#556B2F;
+	color:#87CEEB;
 	margin:0;
 }
 
 #showcase .showcase-content{
-	background: #E6E6F2;
+	background: #87CEEB;
 	color:#333;
 	border-radius: 90px;
 	padding: 40px;
@@ -102,7 +102,7 @@ img{
 
 #features .fa{
 	font-size: 60px;
-	color:#556B2F;
+	color:#87CEEB;
 }
 
 #project{
@@ -124,7 +124,7 @@ img{
 
 /* footer */
 #main-footer{
-	background:#556B2F;
+	background:#1E90FF;
 	color:#fff;
 }
 
@@ -186,13 +186,13 @@ img{
 	padding: 10px 0;
 	font-size: 20px;
 	border: 0;
-	background: #556B2F;
+	background: #1E90FF;
 	color:#fff;
 }
 
 /* user upload */
 #upload form{
-	background: #556B2F;
+	background: #87CEEB;
 	width:600px;
 	height: 300px;
 	padding: 10px 0;
@@ -211,16 +211,8 @@ img{
 	font-size: 20px;
 	border: 0;
 	background: #fff;
-	color:#556B2F;
+	color:#1E90FF;
 }
-
-	
-
-
-
-
-
-
 
 
 /* media queries */
