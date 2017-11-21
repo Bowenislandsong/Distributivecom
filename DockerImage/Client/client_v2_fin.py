@@ -29,6 +29,7 @@ def send_message(message, s):
 
 def receive_message(s):
     data = s.recv(BUFFER_SIZE)
+    print("REC",data)
     return data
 
 
