@@ -1,39 +1,44 @@
-
+from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 from websocket import create_connection
-ws = create_connection("ws://localhost:8001/")
-ws.settimeout(15.0)
+import threading
+import time
+commands = 
+clients = []
+class SimpleChat(WebSocket):
+
+	def handleMessage(self):
+		for client in clients:
+		#if client != self:
+			
+			client.sendMessage(self.address[0] + u' - ' + self.data)
+			
+		print(self.data)
+
+	def handleConnected(self):
+		print(self.address, 'connected')
+		# for client in clients:
+
+		# 	client.sendMessage(self.address[0] + u' - connected')
+		clients.append(self)
 
 
-print("Sending 'Hello, World'...")
-ws.send("Hello, World")
-print("Sent")
-print("Receiving...")
-result = ws.recv()
-print("Received '%s'" % result)
+	def handleClose(self):
+		clients.remove(self)
+		print(self.address, 'closed')
+		# for client in clients:
+		# 	client.sendMessage(self.address[0] + u' - disconnected')
 
-print("Sending 'Hello, World'...")
-ws.send("Hello, World23")
-print("Sent")
-print("Receiving...")
-result = ws.recv()
-print("Received '%s'" % result)
-print("Sending 'Hello, World'...")
-ws.send("Hello, World3")
-print("Sent")
-print("Receiving...")
-result = ws.recv()
-print("Received '%s'" % result)
-print("Sending 'Hello, World'...")
-ws.send("Hello, World4")
-print("Sent")
-print("Receiving...")
-result = ws.recv()
-print("Received '%s'" % result)
-print("Sending 'Hello, World'...")
-ws.send("Hello, World")
-print("Sent")
-print("Receiving...")
-result = ws.recv()
-print("Received '%s'" % result)
-ws.close()
+def main():
+	#threading.Thread(target=start_server,args=()).start
+	server = SimpleWebSocketServer('', 8001, SimpleChat)
+	server.serveforever()
+
+def start_server():
+
+	server = SimpleWebSocketServer('', 8001, SimpleChat)
+	server.serveforever()
+
+
+if __name__=="__main__":
+	main()
 
