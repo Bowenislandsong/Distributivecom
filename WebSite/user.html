@@ -2,144 +2,129 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>User Medusa.pys</title>
 		<link rel="stylesheet" href="css/flexboxgrid.css">
 		<link rel="stylesheet" href="css/font-awesome.css">
 		<link rel="stylesheet" href="css/style.css">
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-9383695819970962",
+				enable_page_level_ads: true
+			});
+		</script>
+
 	</head>
-	<body>
+	<body class="user-bg">
 		<!--Header-->
-		<header id="main-header"> 
+		<header id="main-header">
 			<div class="container">
 				<div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle- md middle-lg">
 					<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-						<h1><span class="primary-text">Medusa</span>.pys</h1>
+						<h1 class=><span class="primary-text">Medusa</span>.pys</h1>
 					</div>
 					<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
 						<nav id="navbar">
 							<ul>
 								<li><a href="index.html">Home</a></li>
-								<li><a href="provider.html">Provider</a></li>
 								<li class="current"><a href="user.html">User</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="login.html">Login</a></li>
-								<li><a href="aboutus.html">About Us</a></li>
+								<li><a href="provider.html">Provider</a></li>
+								<li><a href="about.html">About Us</a></li>
 							</ul>
 						</nav>						
-					</div>
+					</div>					
 				</div>
 			</div>			
 		</header>
-	
+
 		<section id="subheader">
 			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h1>User</h1>						
+				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
+					<h1>User</h1>
+				</div>				
+			</div>
+		</section>
+
+		<section id="upload">
+			<div class="container">
+				<div class="row center-xs center-sm center-md center-lg">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="multi-upload">
+						<h2><span class="reg-text">Choice 1:</span> Segment the code yourself</h2>
+						<div class="multi-side">
+							<div class="upload1-1">			
+								<p>Please Upload Your <span class="upld-text">Files</span> Here:</p>
+								<form id="multiUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
+									<p class="file-upload-choose"> Choose your file
+									<input type="file" name="file">	
+									</p>
+									<p class="max-size">Max size for upload is 5GB.</p>
+								<button type="sumbit" >Upload</button>	
+								</form>
+							</div>
+							<div class="upload1-2">
+								<p>Please Upload Your  <span class="upld-text">Resource</span> Here:</p>
+								<form id="multiUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
+									<p class="file-upload-choose"> Choose your files
+										<input type="file" name="file">	
+									</p>
+									<p class="max-size">Max size for upload is 5GB.</p>
+									<button type="sumbit" >Upload</button>
+								</form>					
+							</div>
+						</div>
+						<br>						
 					</div>					
-				</div>				
-			</div>			
-		</section>
-
-	
-		<!--user uploads single file, add error tolerance later -->
-		<section id="single-upload">
-			<div class="container">
-				<div class="row center-xs center-sm center-md center-lg">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h2><span class="primary-text">Choice 1:</span> Let Us Segment the Code For You!</h2>
-						<p>Please Upload Your Code Here:</p>
-						<form id="singleUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
-							<p class="code-upload-choose"> Choose your file
-								<input type="file" name="file">	
-							</p>
-							<p>Max size for upload is 5GB.</p>
-							<button type="sumbit" >Upload</button>
-						</form>	
-						<p>Please Upload Your Resource Here:</p>
-						<form id="singleResoureUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
-							<p class="resource-upload-choose"> Choose your file
-								<input type="file" name="file">	
-							</p>
-							<p>Max size for upload is 5GB.</p>
-							<button type="sumbit" >Upload </button>
-						</form>																		
-					</div>
-					
-
+				
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="single-upload">
+						<h2><span class="reg-text">Choice 2:</span> Let us segment for you!</h2>
+						<div class="single-side">
+							<div class="upload2-1">
+								<p>Please Upload Your  <span class="upld-text">Files</span> Here:</p>
+								<form id="singleUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
+									<p class="file-upload-choose"> Choose your file
+									<input type="file" name="file">	
+									</p>
+									<p class="max-size">Max size for upload is 5GB.</p>
+									<button type="sumbit" >Upload</button>	
+								</form>
+							</div>
+							<div class="upload2-2">
+								<p>Please Upload Your  <span class="upld-text">Resource</span> Here:</p>
+								<form id="singleUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
+								<p class="file-upload-choose"> Choose your file
+									<input type="file" name="file">	
+								</p>
+								<p class="max-size">Max size for upload is 5GB.</p>
+								<button type="sumbit" >Upload</button>
+							</form>						
+							</div>
+							<br>
+					</div>	
 				</div>
-			</div>
-		</section>	
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h2 class="send-result">After the work is <span class="reg-text">done</span>,<br> we will send the <span class="reg-text">result</span> back to your email!</h2>
+				</div>		
+			</div>	
+		</div>				
+	</section>
 
-		<!--upload a multiple files, add error tolerance later-->
-		<section id="single-upload">
-			<div class="container">
-				<div class="row center-xs center-sm center-md center-lg">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h2><span class="primary-text">Choice 2:</span> Segment the Code Yourself!</h2>
-						<p>Please Upload Your Files Here:</p>
-						<form id="multiUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
-							<p class="file-upload-choose"> Choose your files
-								<input type="file" name="file">	
-							</p>
-							<p>Max size for upload is 5GB.</p>
-							<button type="sumbit" >Upload</button>
-						</form>	
-						<p>Please Upload Your Resource Here:</p>
-						<form id="multiUpload" enctype="multipart/form-data" method="POST" action="http://medusapys.site/sources">
-							<p class="file-upload-choose"> Choose your files
-								<input type="file" name="file">	
-							</p>
-							<p>Max size for upload is 5GB.</p>
-							<button type="sumbit" >Upload</button>
-						</form>						
-						<br>
-						<br>
-						<br>																	
-					</div>
-				</div>
-			</div>
-		</section>	
-
-
-		
-
-		<!--Project-->
-		<section id="project">
-			<div class="container">
-				<div class="row">
+	<footer>
+			<div class="container">				
+				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						<h4>Contact Us</h4>
-						<ul>
-							<li><i class="fa fa-phone"></i> (233)518-5918</li>
-							<li><i class="fa fa-envelope"></i> support@medusa.test</li> 
-							<li><i class="fa fa-map"></i> 8 St Mary's St, Boston, MA 02215</li>  
-						</ul>						
+						<p><a href="contact.html">CONTACT US</a></p>
 					</div>
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						<h4>About Us</h4>
-						<p>This is the coolest project you've ever heard!</p>				
+						<p>Copyright &copy; 2017  |  Medusa.pys</p>
 					</div>
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						<h4>Support Us</h4>
-						<ul>
-							<li><i class="fa fa-paypal"></i> getrich@gmail.com</li>  
-						</ul>			
+						<P> FOLLOW US: 
+						<i class="fa fa-facebook">  </i>
+						<i class="fa fa-twitter">  </i>
+						<i class="fa fa-instagram">  </i>
+						</P>
 					</div>
-				</div>				
-			</div>
-		</section>
-
-		<!--footer-->
-		<footer id="main-footer">
-			<div class="container">
-				<div class="row center-xs center-sm center-md center-lg">
-					<p>Copyright &copy; 2017  |  Medusa.pys</p>
 				</div>
 			</div>
 		</footer>
-
-
-
-
 	</body>
