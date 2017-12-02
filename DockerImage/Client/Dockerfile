@@ -19,11 +19,13 @@ RUN \
   apt-get install -y python-setuptools python-dev && \
   apt-get install -y python-pip && \
   pip install --upgrade pip && \
-  pip install cryptography && \
-  pip install fernet && \ 
-  pip install flask && \
-  pip3 install flask && \
-  pip3 install cryptography
+  pip install websocket-client && \
+  pip install git+https://github.com/dpallot/simple-websocket-server.git
+#  pip install cryptography && \
+#  pip install fernet && \ 
+#  pip install flask && \
+#  pip3 install flask && \
+#  pip3 install cryptography
 #pip install flask && \
 # Add files.
 ADD . /root
@@ -37,11 +39,10 @@ WORKDIR /root
 
 #PORTS
 EXPOSE 5000
-EXPOSE 9999
+EXPOSE 1111
+EXPOSE 8000
 # Define default command.
-CMD ["bash"]
+#CMD ["bash"]
 #CMD ["export FLASK_APP=client.py"]
-CMD ["python3" ,"-m", "flask" ,"run"]
-#CMD ["python3","client.py"]
-
-
+#CMD ["flask" ,"run"]
+CMD ["python3","client.py"]
