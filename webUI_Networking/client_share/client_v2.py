@@ -5,24 +5,22 @@ import subprocess
 from flask import Flask, render_template, request
 import socket
 import sys
-from cryptography.fernet import Fernet
 from zipfile import *
 import glob
 import subprocess
+from websocket import create_connection
 
 BUFFER_SIZE = 65536
+SOCKET_TIMEOUT = 15
 # create a socket object
 # get local machine name / ip
-host = socket.gethostname()
-port = 9999
+ADDRESS = "ws://localhost:8001/"
 
+def join_swarm():
+    pass
 
-def encryption(message):
-    message_b = bytes(message, encoding="utf8")  # str to bytes
-    key = Fernet.generate_key()
-    cipher_suite = Fernet(key)
-    cipher_text = cipher_suite.encrypt(message_b)
-    return cipher_text, key
+def leave_swarm():
+    pass
 
 
 def send_message(message, s):
@@ -31,7 +29,7 @@ def send_message(message, s):
 
 
 def receive_message(s):
-    data = s.recv(BUFFER_SIZE)
+    data = s.recv()
     return data
 
 
@@ -39,8 +37,8 @@ def receive_message(s):
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
-    template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
-    static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
+    template_folder='/home/hari/Workspace/Distributivecom/webUI_Networking/templates',
+    static_folder='/home/hari/Workspace/Distributivecom/webUI_Networking/static')
 
 
 def send_file(s):
@@ -74,9 +72,9 @@ def aquire_user_info():
     return total_info
 
 
-def init_connection(host, port):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((host, port))
+def init_connection(address):
+    s = create_connection(address)
+    s.settimeout(SOCKET_TIMEOUT)
     return s
 
 def scan():
@@ -94,30 +92,34 @@ def login(name=None):
 @app.route('/login', methods=['POST'])
 def authentication():
     info = aquire_user_info()
-    s = init_connection(host, port)
-    send_message(info, s)
-    data = str(receive_message(s))
-    s.close()
-    real_data = data[2:len(data) - 1]
-    if real_data == 'yes':
+    global s 
+    s = create_connection(ADDRESS)
+    s.settimeout(SOCKET_TIMEOUT)
+    s.send(info)
+    data = s.recv()
+    #real_data = data[2:len(data) - 1]
+    print(data)
+    if data == 'yes':
         return render_template('button.html')
     else:
         return render_template('failure.html')
 
-
 @app.route('/execute')
 def hello(name=None):
     #   subprocess.call('python connect.py',shell=True)
-    s = init_connection(host, port)
+    #s = init_connection(ADDRESS)
+    global s
     send_message('file', s)
-    receive_file(s)
-    s.close()
-    with ZipFile('received.zip', 'r') as zip:
-        zip.extractall();
-    scan()
-    s = init_connection(host, port)
-    send_file(s)
-    s.close()
+    data = s.recv()
+    print(data)
+    #receive_file(s)
+    #s.close()
+    #with ZipFile('received.zip', 'r') as zip:
+    #    zip.extractall();
+    #scan()
+    #s = init_connection(host, port)
+    #send_file(s)
+    #s.close()
     return render_template('execute.html')
 
 
