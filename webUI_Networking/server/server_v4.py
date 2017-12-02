@@ -108,6 +108,7 @@ def execution(clientsocket,q,filelist,p):
         print('different os may cause the error')
 
     clientsocket.close()
+    return 0
 
 
 def listen_thread():
