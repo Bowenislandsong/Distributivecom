@@ -9,18 +9,34 @@ from zipfile import *
 import glob
 import subprocess
 from websocket import create_connection
+from ftplib import FTP
+from zipfile import *
 
 BUFFER_SIZE = 65536
 SOCKET_TIMEOUT = 15
-# create a socket object
-# get local machine name / ip
+
 ADDRESS = "ws://localhost:8001/"
 
-def join_swarm():
-    pass
+def uploadFile(filename):
+    ftp = FTP('18.216.9.67')     # connect to host, default port
+    print(ftp.login())
+    print(ftp.cwd('/incoming/uploading/'))
+    ftp.set_pasv(False)
+    print(ftp.retrlines('LIST'))
+    ftp.storbinary('STOR '+filename, open(filename, 'rb'))
+    ftp.quit()
 
-def leave_swarm():
-    pass
+def downloadFile(filename):
+    ftp = FTP('18.216.9.67')     # connect to host, default port
+    print(ftp.login())
+    print(ftp.cwd('/outgoing/'))
+    ftp.set_pasv(False)
+    files = []
+    ftp.retrlines('LIST',files.append)
+    localfile = open(filename, 'wb')
+    ftp.retrbinary('RETR ' + filename, localfile.write, 1024)
+    localfile.close()
+    ftp.quit()
 
 
 def send_message(message, s):
@@ -33,7 +49,6 @@ def receive_message(s):
     return data
 
 
-# flask initialization
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
@@ -78,11 +93,24 @@ def init_connection(address):
     return s
 
 def scan():
+    prevList = os.listdir()
+    path=os.getcwd()
+    cmd = 'docker run -it -v ' +path +':client_share con'
+    
     while True:
         if(glob.glob('ml.py')):
-            subprocess.call('docker build -t con .',shell = True)
-            subprocess.call('docker run -it -v ~/Desktop/client_share:/client_share con' , shell = True)
+            p1=subprocess.Popen(['docker'],['build'],['-t'],['con .'])
+            p1.wait()
+            p2=subprocess.Popen(cmd)
+            p2.wait()
             break
+    currList = os.listdir()
+    diffList = list(set(currList).symmetric_difference(set(prevList)))
+    zip_archive = ZipFile( "result_"+data,"w",ZIP_DEFLATED)
+    for filename in diffList:
+        zip_archive.write(filename)
+    zip_archive.close()
+    return "result_"+data
 
 @app.route('/')
 def login(name=None):
@@ -97,7 +125,6 @@ def authentication():
     s.settimeout(SOCKET_TIMEOUT)
     s.send(info)
     data = s.recv()
-    #real_data = data[2:len(data) - 1]
     print(data)
     if data == 'yes':
         return render_template('button.html')
@@ -106,20 +133,16 @@ def authentication():
 
 @app.route('/execute')
 def hello(name=None):
-    #   subprocess.call('python connect.py',shell=True)
-    #s = init_connection(ADDRESS)
     global s
     send_message('file', s)
     data = s.recv()
     print(data)
-    #receive_file(s)
-    #s.close()
-    #with ZipFile('received.zip', 'r') as zip:
-    #    zip.extractall();
-    #scan()
-    #s = init_connection(host, port)
-    #send_file(s)
-    #s.close()
+    downloadFile(data)
+    with ZipFile(data, 'r') as zip:
+        zip.extractall();
+    resultfile = scan(data)
+    uploadFile(resultfile)
+    send_message(resultfile,s)
     return render_template('execute.html')
 
 

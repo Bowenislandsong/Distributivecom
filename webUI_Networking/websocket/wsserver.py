@@ -31,12 +31,12 @@ class SimpleChat(WebSocket):
 	def handleMessage(self):
 		msg = self.data
 		if(msg!='file'):
-			result = authentication(msg)
+			reply = authentication(msg)
 		else:
-			result = 'hi'
+			reply = 'test.zip'
 		for client in clients:
 		#if client != self:
-			client.sendMessage(result)
+			client.sendMessage(reply)
 
 			
 		print(self.data)
