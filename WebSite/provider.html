@@ -16,6 +16,7 @@
 
 	</head>
 	<body class="provider-bg">
+		<div class="providerBG">
 		<!--Header-->
 		<header id="main-header">
 			<div class="container">
@@ -40,7 +41,7 @@
 		<section id="subheader">
 			<div class="container">
 				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
-					<h1>Provider</h1>
+					<h1>Get <span class="provider-sub">Paid</span> From Us</h1>
 				</div>				
 			</div>
 		</section>
@@ -49,11 +50,11 @@
 			<div class="container">
 				<div class="row center-xs center-sm center-md center-lg">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h2>First Step: Sign Up</h2>
+						<h2><li class="fa fa-sign-in"></li><span class="provider-text-1">First Step:</span><span class="provider-text-2"> Sign Up</span></h2>
 						<p>New to Medusa.pys?<br>
-							Please Sign up to be one of the Provider now!</p>
+							Please Sign up to be one of the <span class="reg-text">Provider</span> now!</p>
 					</div>
-					<a href="register.html" class="reg-from-pvd">Sign Up</a>
+					<a href="register.html">Sign Up</a>
 				</div>				
 			</div>			
 		</section>
@@ -63,9 +64,9 @@
 			<div class="container">
 				<div class="row center-xs center-sm center-md center-lg">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h2>Second Step: Download</h2>
-						<p>Already a member of Medusa.pys? <br>
-							Please download our App to your OS!</p>
+						<h2><li class="fa fa-download"></li><span class="provider-text-3">Second Step:</span><span class="provider-text-4"> Download</span></h2>
+						<p class="download-txt">Already a member of Medusa.pys? <br>
+							Please download the <span class="reg-text">Medusa</span> now!</p>
 						<div class="row center-xs center-sm center-md center-lg" id="os-icons">
 							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 								<i class="fa fa-apple"></i><br>
@@ -88,8 +89,22 @@
 			</div>			
 		</section>
 
-		<!--footer: social media link to be added if needed-->
-		<footer id="index-footer">
+		<section id="donation">
+			<div class="container">
+				<div class="row end-xs end-sm end-lg bottom-xs bottom-sm bottom-lg">
+					<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="VHMMM38W6KSCN">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
 			<div class="container">				
 				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -100,13 +115,12 @@
 					</div>
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<P> FOLLOW US: 
-						<i class="fa fa-facebook">  </i>
-						<i class="fa fa-twitter">  </i>
-						<i class="fa fa-instagram">  </i>
+						<a href="https://www.facebook.com/Medusa.pys/"><i class="fa fa-facebook">  </i></a>
 						</P>
 					</div>
 					
 				</div>
 			</div>
 		</footer>
+	</div>
 	</body>
