@@ -12,10 +12,10 @@ img{
 }
 
 footer{
-	margin-bottom: -450px;
+	margin-bottom: 0;
 	height: 50px;
-	position: absolute;
-	bottom: 0px;
+	position: relative;
+	bottom: 0;
 	width: 100%;
 	font-size: 15px;
 	color: grey;
@@ -25,6 +25,7 @@ footer{
 .container{
 	margin:auto;
 }
+
 
 /*Commom Classes*/
 
@@ -55,14 +56,37 @@ footer{
 }
 
 /*Subheader*/
+#subheader{
+	margin-top: 80px;
+	margin-bottom: 15%;
+}
+
+#subHder p{
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 50px;
+}
+
 #subheader h1{
 	font-family: proxima-nova-sc,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 40px;
 	line-height: 1;
-	font-weight: 600;
+	font-weight: 400;
 	color:#000;
-	margin-bottom: -10px;
-	text-transform: uppercase;
+}
+
+#subheader a:hover{
+	background-color: #000;
+    border-color: #fff;
+    color: #fff;   
+}
+
+
+#donation{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+
 }
 
 /*Navbar*/
@@ -388,15 +412,32 @@ footer i{
     color:#000;
 }
 
-#contact-info a:hover{
+#facebook-link{
+	margin-top: 2%;
+	margin-bottom: 10%;
+}
+#email-btn a:hover{
 	background-color: #000;
     border-color: #fff;
     color: #fff;
 }
 
+#facebook-link .fa{
+	font-size: 65px;
+	color: grey;
+	margin-left: 20px;
+}
+
 /*User Page*/
 .user-bg{
-	background-color: #EFEFF1;
+	background:url('../images/user-center.jpg') no-repeat center center;
+}
+
+.user-text{
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 65px;
+
 }
 
 #multi-upload{
@@ -487,7 +528,7 @@ footer i{
 	font-weight: 600;
 }
 
-.send-result {
+.send-result{
 	line-height: 1.2;
 }
 
@@ -501,6 +542,15 @@ footer i{
 	font-size: 40px;
 }
 
+#subtitle-1 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-2 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
 /*Provider Page*/
 .provider-bg{
 	background: url('../images/provider.jpg') no-repeat center center;
@@ -509,16 +559,7 @@ footer i{
     background-size: cover; 
  	background-position:0% 0%;
 }
-.providerBG{
-	position: absolute;  
-    left: 0;  
-    right: 0;  
-    top: 0;  
-    bottom: 0;  
-    width: 100%;  
-    height: 100%;  
-    background:rgba(255,255,255,0.4);
-}
+
 
 #signup-first{
 	margin-top: 35px;
@@ -613,3 +654,33 @@ footer i{
 	margin-top: 20px;
 }
 
+.provider-sub{
+	font-size: 50px;
+	font-weight: 500;
+	color:#FFD306;
+}
+
+.provider-guide{
+	font-size: 25px;
+	font-weight: 200;
+	line-height: 50px;
+}
+#subtitle-3 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-4 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-5 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-6 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
