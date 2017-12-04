@@ -412,10 +412,6 @@ footer i{
     color:#000;
 }
 
-#facebook-link{
-	margin-top: 2%;
-	margin-bottom: 10%;
-}
 #email-btn a:hover{
 	background-color: #000;
     border-color: #fff;
@@ -426,6 +422,12 @@ footer i{
 	font-size: 65px;
 	color: grey;
 	margin-left: 20px;
+}
+
+#address p{
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 1.2;
 }
 
 /*User Page*/
@@ -683,4 +685,65 @@ footer i{
 #subtitle-6 h2{
 	font-size: 45px;
 	font-weight: 900;
+}
+
+/*Choose Page*/
+.choose-bg{
+	background:url('../images/choose.jpg') no-repeat center center;
+}
+
+.choose-text{
+	font-weight: 600;
+	font-size: 25px;
+	text-transform:uppercase;
+}
+
+#choose h2{
+	font-size: 45px;
+	margin-top: 10%;
+	line-height: 1.5px;
+}
+
+.user-descrip p{
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 1.2;
+	margin-top: 15%;
+}
+
+.user-descrip a{
+	margin-top: 10%;
+}
+
+.user-descrip a:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;
+}
+
+#choose h4{
+	font-weight:300;
+}
+
+#prvdSide h2{
+	font-size: 45px;
+	margin-top: 15%;
+	line-height: 50px;
+}
+
+.prvd-descrip p{
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 1.2;
+	margin-top: 15%;
+}
+
+.prvd-descrip a{
+	margin-top: 20%;
+}
+
+.prvd-descrip a:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;
 }
