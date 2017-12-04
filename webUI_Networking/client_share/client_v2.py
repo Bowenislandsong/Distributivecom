@@ -8,14 +8,14 @@ import sys
 from zipfile import *
 import glob
 import subprocess
-from websocket import create_connection
+from websocket import *
 from ftplib import FTP
 from zipfile import *
 
 BUFFER_SIZE = 65536
 SOCKET_TIMEOUT = 15
 
-ADDRESS = "ws://localhost:8001/"
+ADDRESS = "ws://localhost:9999/"
 
 def uploadFile(filename):
     ftp = FTP('18.216.9.67')     # connect to host, default port
@@ -52,8 +52,8 @@ def receive_message(s):
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
-    template_folder='/home/hari/Workspace/Distributivecom/webUI_Networking/templates',
-    static_folder='/home/hari/Workspace/Distributivecom/webUI_Networking/static')
+    template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
+    static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
 
 
 def send_file(s):
@@ -92,17 +92,17 @@ def init_connection(address):
     s.settimeout(SOCKET_TIMEOUT)
     return s
 
-def scan():
+def scan(data):
     prevList = os.listdir()
-    path=os.getcwd()
-    cmd = 'docker run -it -v ' +path +':client_share con'
+    path=os.getcwd().split(os.environ['HOME'])[1]
+    #path=os.getcwd()
+    print(path)
+    #cmd = 'docker run -it -v ~/Desktop/client_share:/client_share con'
     
     while True:
         if(glob.glob('ml.py')):
-            p1=subprocess.Popen(['docker'],['build'],['-t'],['con .'])
-            p1.wait()
-            p2=subprocess.Popen(cmd)
-            p2.wait()
+            p1 = subprocess.call('docker build -t con .',shell = True)
+            p2 = subprocess.call('docker run -it -v ~'+path+':/clientshare con' , shell = True)
             break
     currList = os.listdir()
     diffList = list(set(currList).symmetric_difference(set(prevList)))
@@ -110,7 +110,7 @@ def scan():
     for filename in diffList:
         zip_archive.write(filename)
     zip_archive.close()
-    return "result_"+data
+    return "result_"+ data
 
 @app.route('/')
 def login(name=None):

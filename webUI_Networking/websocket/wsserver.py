@@ -1,5 +1,5 @@
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
-from websocket import create_connection
+#from websocket import create_connection
 import threading
 import time
 clients = []
@@ -29,11 +29,17 @@ def authentication(data):
 class SimpleChat(WebSocket):
 
 	def handleMessage(self):
+		counter = 0
+		fileli = ['file1.zip','file2.zip']
 		msg = self.data
 		if(msg!='file'):
 			reply = authentication(msg)
 		else:
-			reply = 'test.zip'
+			if len(fileli) > 0 and len(fileli) > counter:
+				reply = fileli[counter]
+				print(reply)
+				counter = counter + 1
+
 		for client in clients:
 		#if client != self:
 			client.sendMessage(reply)
@@ -58,7 +64,7 @@ class SimpleChat(WebSocket):
 def main():
 #	threading.Thread(target=start_server,args=()).start
 
-	server = SimpleWebSocketServer('', 8001, SimpleChat)
+	server = SimpleWebSocketServer('0.0.0.0', 9999, SimpleChat)
 	server.serveforever()
 
 
