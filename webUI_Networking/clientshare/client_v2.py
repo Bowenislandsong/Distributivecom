@@ -53,8 +53,8 @@ def receive_message(s):
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
-    template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
-    static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
+    template_folder='templates',
+    static_folder='static')
 
 
 def send_file(s):
