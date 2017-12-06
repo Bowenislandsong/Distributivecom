@@ -41,7 +41,7 @@ class SimpleChat(WebSocket):
 				counter = counter + 1
 
 		for client in clients:
-		#if client != self:
+		if client == self:
 			client.sendMessage(reply)
 
 			
@@ -49,9 +49,9 @@ class SimpleChat(WebSocket):
 
 	def handleConnected(self):
 		print(self.address, 'connected')
-		# for client in clients:
-
-		# 	client.sendMessage(self.address[0] + u' - connected')
+		for client in clients:
+			if client == self:
+		 		client.sendMessage(self.address[0] + u' - connected')
 		clients.append(self)
 
 
