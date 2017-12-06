@@ -53,8 +53,8 @@ def receive_message(s):
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
-    template_folder='templates',
-    static_folder='static')
+    template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
+    static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
 
 
 def send_file(s):
@@ -101,9 +101,10 @@ def scan(data):
     #cmd = 'docker run -it -v ~/Desktop/client_share:/client_share con'
     
     while True:
-        if(glob.glob('ml.py')):
+        if(glob.glob('ModelTraining.jar')):
             #thread.run_program(path)
             #threading.Thread(target=run_program, args=(path)).start()
+            print('####################################3')
             run_program(path)
             break
     currList = os.listdir()
@@ -116,6 +117,7 @@ def scan(data):
 
 def run_program(path):
     p1 = subprocess.call('docker build -t con .',shell = True)
+    print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     p2 = subprocess.call('docker run -it -v ~'+path+':/clientshare con' , shell = True)
 
 @app.route('/')

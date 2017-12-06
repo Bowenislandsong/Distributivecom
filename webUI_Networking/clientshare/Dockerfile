@@ -12,16 +12,17 @@ RUN \
   apt-get install -y python3-pip && \
   apt-get install -y python-setuptools python-dev && \
   apt-get install -y python-pip && \
+  apt-get install -y openjdk-8-jdk &&\
   pip install --upgrade pip
 
 # Set environment variables.
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-
+#ENV PATH=$PATH:/usr/lib/jvm/java-8-openjdk/bin
+#ADD . /clientshare
 WORKDIR /clientshare
 
-ADD . /clientshare
-
-ADD ml.py /
-
-CMD ["python3","ml.py"]
+CMD ["bash"]
+#CMD ["ls"]
+#CMD ["cat","wsclient.py"]
+CMD ["/usr/bin/java","-jar", "ModelTraining.jar"]
