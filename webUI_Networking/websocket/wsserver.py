@@ -2,8 +2,21 @@ from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 #from websocket import create_connection
 import threading
 import time
+import pymongo
+from pymongo import MongoClient
 clients = []
 
+client = MongoClient('mongodb://dishantp:newuser@ds257485.mlab.com:57485/distcomp')
+db=client.distcomp
+
+def findjobs():
+	user = db.users.find_one({"Uploaded file":{"$size":4}})
+	if user:
+		files = user['Uploaded file']
+		username = user['name']
+		print(username)
+		db.users.update({'name':username}, {"$unset": {'Uploaded file':""}})
+		return files
 
 def searchFiles():
 	filelist = []
@@ -30,7 +43,7 @@ class SimpleChat(WebSocket):
 
 	def handleMessage(self):
 		counter = 0
-		fileli = ['file1.zip','file2.zip']
+		fileli = ['Distribut0.zip','Distribut1.zip','Distribut2.zip']
 		msg = self.data
 		if(msg!='file'):
 			reply = authentication(msg)
