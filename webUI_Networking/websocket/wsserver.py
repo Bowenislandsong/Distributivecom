@@ -5,6 +5,8 @@ import time
 import pymongo
 from pymongo import MongoClient
 clients = []
+global counter
+counter = 0
 
 client = MongoClient('mongodb://dishantp:newuser@ds257485.mlab.com:57485/distcomp')
 db=client.distcomp
@@ -42,7 +44,6 @@ def authentication(data):
 class SimpleChat(WebSocket):
 
 	def handleMessage(self):
-		counter = 0
 		fileli = ['Distribut0.zip','Distribut1.zip','Distribut2.zip']
 		msg = self.data
 		if(msg!='file'):
