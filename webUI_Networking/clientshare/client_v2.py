@@ -16,6 +16,7 @@ import threading
 BUFFER_SIZE = 65536
 SOCKET_TIMEOUT = 15
 
+#ADDRESS = "ws://medusapys.site:9999/"
 ADDRESS = "ws://localhost:9999/"
 
 def uploadFile(filename):
@@ -94,7 +95,7 @@ def init_connection(address):
     return s
 
 def scan(data):
-    prevList = os.listdir()
+#   prevList = os.listdir()
     path=os.getcwd().split(os.environ['HOME'])[1]
     print(path)
     #path=os.getcwd()
@@ -102,22 +103,19 @@ def scan(data):
     
     while True:
         if(glob.glob('ModelTraining.jar')):
-            #thread.run_program(path)
-            #threading.Thread(target=run_program, args=(path)).start()
-            print('####################################3')
             run_program(path)
             break
     currList = os.listdir()
-    diffList = list(set(currList).symmetric_difference(set(prevList)))
+#   diffList = list(set(currList).symmetric_difference(set(prevList)))
     zip_archive = ZipFile( "result_"+data,"w",ZIP_DEFLATED)
-    for filename in diffList:
+    for filename in currList:
         zip_archive.write(filename)
     zip_archive.close()
     return "result_"+ data
 
 def run_program(path):
+    print(os.getcwd())
     p1 = subprocess.call('docker build -t con .',shell = True)
-    print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     p2 = subprocess.call('docker run -it -v ~'+path+':/clientshare con' , shell = True)
 
 @app.route('/')
@@ -133,7 +131,6 @@ def authentication():
     s.settimeout(SOCKET_TIMEOUT)
     s.send(info)
     data = s.recv()
-    print(data)
     if data == 'yes':
         return render_template('button.html')
     else:
@@ -142,8 +139,12 @@ def authentication():
 @app.route('/execute')
 def hello(name=None):
     global s
+    print('111111111111111')
     send_message('file', s)
+    print('22222222222222')
     data = s.recv()
+    print('33333333333333')
+    print('the file will be download is')
     print(data)
     downloadFile(data)
     with ZipFile(data, 'r') as zip:

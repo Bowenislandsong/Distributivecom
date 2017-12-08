@@ -17,7 +17,7 @@ def findjobs():
     if user:
         files = user['Uploaded file']
         username = user['name']
-        db.users.update({'name':username}, {"$unset": {'Uploaded file':""}})
+#       db.users.update({'name':username}, {"$unset": {'Uploaded file':""}})
         return files
 
 def auth(username, password):
@@ -60,29 +60,32 @@ class SimpleChat(WebSocket):
         global counter
         global have_job
 
-        fileli = ['dishantp_Distribut0.zip','dishantp_Distribut1.zip','dishantp_Distribut2.zip']
-        # if(have_job==0):
-        #     fileli = findjobs()
-        #     if(fileli!='None'):
-        #         have_job=1
-        #     else:
-        #         have_job=0
-        # print(fileli)
+        #fileli = ['dishantp_Distribut0.zip','dishantp_Distribut1.zip','dishantp_Distribut2.zip']
+        if(have_job==0):
+            fileli = findjobs()
+            if(fileli!='None'):
+                have_job=1
+            else:
+                have_job=0
+        print(fileli)
         msg = self.data
         if(msg!='file'):
+            print('!!!!!!!!!!!!!!!!!!!!!!')
             reply = authentication(msg)
         else:
+            print('111111111111111111111')
             if len(fileli) > 0 and len(fileli) > counter:
                 reply = fileli[counter]
+                print('the download file is')
                 print(reply)
                 counter = counter + 1
-            # else:
-            #     fileli = findjobs()
-            #     counter=0
-            #     if(fileli!='None'):
-            #         have_job=1
-            #     else:
-            #         have_job=0
+            else:
+                fileli = findjobs()
+                counter=0
+                if(fileli!='None'):
+                    have_job=1
+                else:
+                    have_job=0
         for client in clients:
             if client == self:
                 client.sendMessage(reply)
