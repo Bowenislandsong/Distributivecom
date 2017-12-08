@@ -39,7 +39,9 @@ As their name suggested, **Server Control** runs on server and is in charge of t
 
 **Local Web UI** is built for customers interested in leasing their computers for financial benefits. This Local Web UI, acting as a cross platform application, after activation, will automatically interact with server and perform tasks. 
 
-The **Website**, currently hosted at http://medusapys.site, is a client side UI for customers looking for hiring computers on Medusa.pys clusters. Clients will upload their file for computing on other computers that are part of our cluster nodes. 
+The **Website**, currently hosted at http://medusapys.site, is a client side UI for customers looking for hiring computers on Medusa.pys clusters. Clients will upload their file for computing on other computers that are part of our cluster nodes.
+
+Webiste Testing result avaliable at http://www.webpagetest.org/result/171208_8Z_78ef41e76aa9df6ef1cd5b6e9a5aa3b1/
 
 To communicate with peer and master computers, the project uses **Swarm** to host **Redis** clusters.
 
