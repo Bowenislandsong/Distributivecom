@@ -1,9 +1,9 @@
 Programming Language: HTML, CSS
-	Functionality:
+## Functionality:
  1. Shows the services that our project could provide.   
 2. Provides the users with the access to our services. 
 3. Contains additional information of our team
-	Structure:
+## Structure:
  ![Alt text](website_structure.jpg?raw=true "Title")
 Every page could access to the index, about and contact us page. 
 Clients could access to the choose page to choose with function they want to use. 
