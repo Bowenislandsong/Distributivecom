@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="css/flexboxgrid.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-9383695819970962",
+				enable_page_level_ads: true
+			});
+		</script>
+
+	</head>
+	<body class="login-bg">
+		<!--Header-->
+		<header id="main-header">
+			<div class="container">
+				<div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle- md middle-lg">
+					<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+						<h1><span class="primary-text">Medusa</span>.pys</h1>
+					</div>
+					<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+						<nav id="navbar">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li class="current"><a  href="login.html">Login</a></li>
+								<li><a href="about.html">About Us</a></li>
+							</ul>
+						</nav>						
+					</div>					
+				</div>
+			</div>			
+		</header>
+
+		<!--Login only for users-->
+		<section id="login-info">
+			<div class="container">
+				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg" id="login-box">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h1>LOGiN</h1>
+					</div>
+					<div id="login-container">
+						<form method="post" id="login" name="login" action=" ">
+							<div class="login-email">
+								<div class="placeholder">Please enter your <span class="reg-text">email:</span></div>
+								<input type="text" class="inputtext" data-type="text" name="-reg-email" aria-required="1" placeholder="please enter your email">	
+							</div>
+							<div class="login-pwd">
+								<div class="placeholder">Please enter your <span class="reg-text">password:</span></div>
+								<input type="password" class="inputpwd" data-type="text" name="-reg-pwd" aria-required="1" placeholder="please enter your password">	
+							</div>
+							<button type="submit" name="websubmit">LOGIN</button>
+						</form>	
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h4>Not a member yet? <a class="login-to-register" href="register.html">Sign Up</a> now!</h4>
+						</div>					
+					</div>
+				</div>	
+			</div>			
+		</section>
+
+		<section id="donation">
+			<div class="container">
+				<div class="row end-xs end-sm end-lg bottom-xs bottom-sm bottom-lg">
+					<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="VHMMM38W6KSCN">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer id="login-footer">
+			<div class="container">				
+				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<p><a href="contact.html">CONTACT US</a></p>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<p>Copyright &copy; 2017  |  Medusa.pys</p>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<P> FOLLOW US: 
+						<i class="fa fa-facebook">  </i>
+						<i class="fa fa-twitter">  </i>
+						<i class="fa fa-instagram">  </i>
+						</P>
+					</div>					
+				</div>
+			</div>
+		</footer>
+	</body>

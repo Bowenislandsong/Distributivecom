@@ -1,0 +1,835 @@
+body{
+	font-family: 'Open-sans', sans-serif;
+	font-size: 17px;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+
+img{
+	width: 100%;
+}
+
+footer{
+	margin-bottom: 0;
+	height: 50px;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	font-size: 15px;
+	color: grey;
+
+}
+
+.container{
+	margin:auto;
+}
+
+
+/*Commom Classes*/
+
+.primary-text{
+	font-size: 60px;
+	font-weight: 600;
+	color: #FF8C00;
+}
+
+.placeholder{
+	color: #000;
+	font-weight: 400;
+	font-size: 18px;
+	padding:20px 10px;
+	text-align: center;
+}
+
+/*Main Header*/
+#main-header{
+	margin-top: 40px;
+}
+
+/*add color*/
+#main-header h1{
+	margin-left: 40px;
+	font-weight: 400;
+	color:#000;
+}
+
+/*Subheader*/
+#subheader{
+	margin-top: 80px;
+	margin-bottom: 15%;
+}
+
+#subHder p{
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 50px;
+}
+
+#subheader h1{
+	font-family: proxima-nova-sc,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 40px;
+	line-height: 1;
+	font-weight: 400;
+	color:#000;
+}
+
+#subheader a:hover{
+	background-color: #000;
+    border-color: #fff;
+    color: #fff;   
+}
+
+#donation{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+
+/*Navbar*/
+#navbar{
+	text-transform:uppercase;
+	margin-right: 25px;
+	font-weight: 600;
+}
+
+#navbar li{
+	display:inline;
+	padding-right:20px;
+	list-style: none;
+}
+
+#navbar a{
+	text-decoration:none;
+	color: #000;
+}
+
+#navbar li.current a, #navbar a:hover{
+	color:#FF8C00;
+	border-bottom: 3px solid #FF8C00;
+	padding-bottom: 3px;
+}
+
+/*Footer*/
+footer p{
+	margin-bottom: 20px;
+	padding: 0px auto;
+}
+
+footer a{
+	color: grey;
+	margin-top: center;
+	
+}
+footer i{
+	font-size: 20px;
+	margin-left: 10px; 
+}
+
+
+/*Index Page*/
+.index-bg{
+	background: url('../images/index.jpg') no-repeat center center;
+  	height:1000px;
+}
+
+.index-text{
+	font-weight: 600;
+	font-size: 75px;
+}
+
+.us-text{
+	font-weight: 600;
+	font-size: 25px;
+	text-transform: uppercase;
+}
+.choose-from-index{
+	margin-top: 20px;
+	background-color: transparent;
+    border-color: #000;
+    color: #000;
+    border-width: .0625rem;
+    border-style: solid;
+    border-radius: 0;
+    padding: .75rem 1.375rem;
+    min-width: 12.9rem;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    line-height: normal !important;
+    outline: none;
+    box-sizing: border-box;
+    font-size: .80rem;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+}
+
+#showcase{
+	margin-top: 80px;
+}
+
+#showcase h1{
+	font-family: proxima-nova-sc,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 45px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	line-height: 1;
+	font-weight: 100;
+	padding-bottom: 20px;
+	color:#000;
+}
+
+#showcase a:hover{
+	background-color: #000;
+    border-color: #fff;
+    color: #fff;   
+}
+
+#user-story{
+	background-color: #D9D9D9;
+	margin-top: 15%;
+}
+
+#user-story img{
+	width:400px;
+	margin-left: 25%;
+	margin-bottom: 15%; 
+}
+
+#user-story h1, #proj-structure h1{
+	font-size: 45px;
+	margin-top: 5%;
+}
+
+#user-story ul{
+	width:300px;
+	font-size: 18px;
+	text-align:left;
+	margin-bottom: 20%;
+}
+
+#proj-structure{
+	background-color: #767171;
+}
+
+#proj-structure img{
+	width: 700px;
+	margin-bottom: 8%; 
+}
+
+#proj-structure p{
+	font-size: 25px;
+}
+
+/*Register Page*/
+.register-bg{
+	background: url('../images/register.jpg') no-repeat center center;
+	width:100%;  
+    height:100%;  
+    background-size: cover; 
+ 	background-position:0% 0%;
+}
+
+.reg-box{
+	padding-bottom:1500px;
+}
+
+.reg-text{
+	font-weight: 600;
+	font-size: 30px;
+	text-transform:uppercase;
+}
+
+#register-info h1{
+	font-family: proxima-nova-sc,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 80px;
+	margin-top: 50px;
+	margin-bottom: 5px;
+	line-height: 1;
+	font-weight: 600;
+	padding-bottom: 20px;
+	color:#000;
+}
+
+#regConBG{
+	margin-bottom: 30px;
+	text-align:center;
+	border:4px solid #BEBEBE;
+	padding:10px 40px; 
+	width: 390px;
+	border-radius:25px;
+	overflow: auto;
+	background-color: #BEBEBE;
+	background-size:cover;
+	opacity: 0.85;
+}
+
+#register-info form{
+	margin: 0 auto;
+}
+
+/* transition effects to be added*/
+#register-info input{
+	width: 350px;
+	height: 25px;
+	border: 1.5px solid grey;
+	border-radius: 3px;	
+} 
+
+#register-info button{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: transparent;
+    border-color: #000;
+    color: #000;
+    border-width: .0625rem;
+    border-style: solid;
+    border-radius: 0;
+    padding: .75rem 1.375rem;
+    min-width: 12.5rem;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    line-height: normal !important;
+    outline: none;
+    box-sizing: border-box;
+    font-size: .75rem;
+    font-weight: 700;
+    transition: all 0.4s ease-in-out;
+}
+
+#register-info button:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;   
+}
+
+/*Login Page*/
+.login-bg{
+	background: url('../images/login.jpg') no-repeat center center;
+	width:100%;  
+    height:100%;  
+    background-size: cover; 
+ 	
+}
+
+.login-box{
+	padding-bottom:1500px;
+}
+
+.login-text{
+	font-weight: 600;
+	font-size: 30px;
+	text-transform:uppercase;
+}
+
+#login-info h1{
+	font-family: proxima-nova-sc,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 80px;
+	margin-top: 50px;
+	margin-bottom: 5px;
+	line-height: 1;
+	font-weight: 600;
+	padding-bottom: 20px;
+	color:#000;
+}
+
+.login-to-register{
+	color:#FF8C00;
+}
+
+#login-info h4{
+	color:#000;
+	font-family: proxima-nova-sc,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 15;
+	font-weight: 200;
+	margin-bottom: 20px;
+}
+
+#login-container{
+	margin-bottom: 30px;
+	text-align:center;
+	border:4px solid #BEBEBE;
+	padding:10px 40px; 
+	width: 390px;
+	border-radius:25px;
+	overflow: auto;
+	background-color: #BEBEBE;
+	background-size:cover;
+	opacity: 0.85;
+}
+
+#login-info form{
+	margin: 0 auto;
+}
+
+/* transition effects to be added*/
+#login-info input{
+	width: 350px;
+	height: 25px;
+	border: 1.5px solid grey;
+	border-radius: 3px;	
+} 
+#login-info button{
+	margin-top: 20px;
+	background-color: transparent;
+    border-color: #000;
+    color: #000;
+    border-width: .0625rem;
+    border-style: solid;
+    border-radius: 0;
+    padding: .75rem 1.375rem;
+    min-width: 12.5rem;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    line-height: normal !important;
+    outline: none;
+    box-sizing: border-box;
+    font-size: .75rem;
+    font-weight: 700;
+    transition: all 0.4s ease-in-out;
+}
+
+#login-info button:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;   
+}
+
+/*Contact Page*/
+.contact-bg{
+	background: url('../images/contact.jpg') no-repeat center center;
+	width:100%;  
+    height:100%;  
+    background-size: cover; 
+ 	background-position:0% 0%;
+}
+#contact-info h1{
+	font-family: proxima-nova-sc,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 80px;
+	margin-top: 80px;
+	margin-bottom: 15px;
+	line-height: 1;
+	font-weight: 600;
+	padding-bottom: 20px;
+	color:#000;
+}
+
+#contact-info p{
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 40px;
+	margin-bottom: 35px;
+}
+
+.btn{
+	border-width: .0625rem;
+    border-style: solid;
+    border-radius: 0;
+    padding: .75rem 1.375rem;
+    min-width: 12.5rem;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    line-height: normal !important;
+    outline: none;
+    box-sizing: border-box;
+    font-size: .75rem;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    color:#000;
+}
+
+#email-btn a:hover{
+	background-color: #000;
+    border-color: #fff;
+    color: #fff;
+}
+
+#facebook-link .fa{
+	font-size: 65px;
+	color: grey;
+	margin-left: 20px;
+}
+
+#address p{
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 1.2;
+}
+
+/*User Page*/
+.user-bg{
+	background:url('../images/user-center.jpg') no-repeat center center;
+}
+
+.user-text{
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 65px;
+
+}
+.user-pay{
+	background: transparent;
+}
+
+.credits{
+	color: grey;
+}
+
+#multi-upload{
+	background: url('../images/user-left.jpg') no-repeat center center;
+	width:100%;  
+    height:100%;  
+    background-size: cover; 
+ 	background-position:0% 0%;
+}
+
+#single-upload{
+	background: url('../images/user-right.jpg') no-repeat center center;
+	width:70%;  
+    height:70%;  
+    background-size: cover; 
+ 	background-position:0% 0%;
+}
+
+#upload{
+	margin-top: 40px;
+}
+
+#upload h2{
+	font-size: 25px;
+	font-weight: 400;
+}
+
+.user-dnld{
+    background-color: transparent;
+}
+
+.user-dnld button:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;
+}
+
+#upload button{
+	border-width: .0625rem;
+    border-style: solid;
+    border-radius: 0;
+    padding: .75rem 1.375rem;
+    min-width: 8.5rem;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    line-height: normal !important;
+    outline: none;
+    box-sizing: border-box;
+    font-size: .75rem;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    color: #000;
+    border-color: #000;
+}
+
+#upload button:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;
+}
+
+.multi-side, .single-side{
+	background-color: #E0E0E0;
+	background-size:cover;
+	border:4px solid #E0E0E0;
+	border-radius:25px;
+	opacity: 0.8;
+	width:350px;
+	height:450px;
+	margin:0 auto;
+}
+
+.file-upload-choose{
+	font-size: 15px;
+	color:grey;
+}
+
+.max-size{
+	font-size: 12px;
+}
+
+.upld-text{
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.send-result{
+	line-height: 1.2;
+}
+
+#upload input{
+	border: 1px solid grey;
+	border-radius: 3px;
+}
+
+.user-subtitle{
+	text-transform: uppercase;
+	font-size: 40px;
+}
+
+#subtitle-1 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-2 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+/*Provider Page*/
+.provider-bg{
+	background: url('../images/provider.jpg') no-repeat center center;
+	width:100%;  
+    height:100%;  
+    background-size: cover; 
+ 	background-position:0% 0%;
+}
+
+
+#signup-first{
+	margin-top: 25px;
+}
+
+.provider-text-1{
+	text-transform: uppercase;
+	font-size: 50px;
+	font-weight: 900;
+	padding-right: 20px;
+}
+
+.provider-text-2{
+	margin-top: 30px;
+	font-weight: 900;
+	font-size: 40px;
+	padding-right: 350px;
+	color: #FF8C00;
+}
+
+#signup-first p{
+	font-size: 25px;
+	line-height: 35px;
+}
+
+#signup-first li{
+	font-size: 50px;
+	padding-right: 10px;
+}
+
+#signup-first a{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background-color: transparent;
+    border-color: #000;
+    color: #000;
+    border-width: .0625rem;
+    border-style: solid;
+    border-radius: 0;
+    padding: .75rem 1.375rem;
+    min-width: 12.5rem;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    line-height: normal !important;
+    outline: none;
+    box-sizing: border-box;
+    font-size: .75rem;
+    font-weight: 700;
+    transition: all 0.4s ease-in-out;
+}
+
+#signup-first a:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;  
+} 
+
+#download h2 li{
+	font-size: 50px;
+	padding-right: 10px;
+}
+
+.provider-text-3{
+	text-transform: uppercase;
+	font-size: 50px;
+	font-weight: 900;
+	padding-right: 5px;
+}
+
+.provider-text-4{
+	margin-top: 30px;
+	font-weight: 900;
+	font-size: 40px;
+	padding-right: 350px;
+	color: #FF8C00;
+}
+
+.download-txt{
+	font-size: 25px;
+	line-height: 35px;
+}
+
+#os-icons p{
+	font-size: 15px;
+}
+
+#os-icons .fa{
+	font-size: 60px;
+	color: #5B5B5B;
+	margin-top: 20px;
+}
+
+.provider-sub{
+	font-size: 50px;
+	font-weight: 500;
+	color:#FFD306;
+}
+
+.provider-guide{
+	font-size: 25px;
+	font-weight: 200;
+	line-height: 60px;
+}
+#subtitle-3 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-4 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-5 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-6 h2{
+	font-size: 45px;
+	font-weight: 900;
+}
+
+#subtitle-6 p{
+	font-size: 18px;
+	font-weight: 500;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/*Choose Page*/
+.choose-bg{
+	background:url('../images/choose.jpg') no-repeat center center;
+}
+
+.choose-text{
+	font-weight: 600;
+	font-size: 25px;
+	text-transform:uppercase;
+}
+
+#choose h2{
+	font-size: 45px;
+	margin-top: 10%;
+	line-height: 1.5px;
+}
+
+.user-descrip p{
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 1.2;
+	margin-top: 15%;
+}
+
+.user-descrip a{
+	margin-top: 10%;
+}
+
+.user-descrip a:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;
+}
+
+#choose h4{
+	font-weight:300;
+}
+
+#prvdSide h2{
+	font-size: 45px;
+	margin-top: 15%;
+	line-height: 50px;
+}
+
+.prvd-descrip p{
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 1.2;
+	margin-top: 15%;
+}
+
+.prvd-descrip a{
+	margin-top: 20%;
+}
+
+.prvd-descrip a:hover{
+	background-color: #000;
+    border-color: #BEBEBE;
+    color: #fff;
+}
+
+/*About Page*/
+.about-bg{
+	background: url('../images/contact.jpg') no-repeat center center;
+	width:100%;  
+    height:100%;  
+    background-size: cover; 
+ 	background-position:10% 0%;
+}
+
+#team-members h1{
+	font-size: 64px;
+	margin-bottom: 5%;
+}
+
+#team-members img{
+	width: 130px;
+}
+
+#team-members a, #Github-Link a{
+	color: #4F4F4F;
+}
+
+.pic1, .pic2, .pic3, .pic4, .pic5,.pic6,.pic7{
+	margin:20px 20px 20px 20px;
+}
+
+#Github-Link{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#Github-Link{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/flexboxgrid.css')}}">
+		<link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.css')}}">
+		<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-9383695819970962",
+				enable_page_level_ads: true
+			});
+		</script>
+
+	</head>
+	<body class="register-bg">
+		<div>
+		<!--Header-->
+			<header id="main-header">
+				<div class="container">
+					<div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle- md middle-lg">
+						<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+								<h1><span class="primary-text" id="reg-logo">Medusa</span>.pys</h1>
+						</div>
+						<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+							<nav id="navbar">
+								<ul>
+									<li><a href="{{ url_for('index') }}">Home</a></li>
+									<li><a href="{{ url_for('loggedin') }}">Login</a></li>
+									<li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+								</ul>
+								</nav>						
+						</div>					
+					</div>
+				</div>			
+			</header>
+
+		<!--Registration-->
+			<section id="register-info">
+				<div class="container">
+					<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg" id="reg-box">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h1>SiGN UP</h1>
+						</div>
+						<div id="regConBG">
+							<div id="reg-container">
+								<form method="post" id="reg" name="reg" action="{{url_for('register')}} ">
+									<div class="reg-email">
+										<div class="placeholder">Please enter a <span class="reg-text">Username:</span></div>
+										<input type="text" class="inputtext" data-type="text" name="username" aria-required="1" placeholder="please enter your username">	
+									</div>
+									<div class="reg-pwd">
+									<div class="placeholder">Please enter your 
+										<span class="reg-text">Email ID:</span></div>
+										<input type="text" class="inputemail" data-type="text" name="email" aria-required="1" placeholder="please enter your Email ID">	
+									</div>
+									<div class="reg-pwd-2">
+										<div class="placeholder">Please <span class=	"reg-text">enter</span> your password:</div>
+										<input type="password" class="inputpwd" data-type="text" name="pass" aria-required="1" placeholder="please enter your password">	
+									</div>
+									<button type="submit" name="websubmit">Create Account</button>
+									<br>
+									<div class="flashes">
+  										{% for message in get_flashed_messages()%}
+    									{{ message }}
+  										{% endfor %}
+									</div>
+								</form>						
+							</div>
+						</div>
+					</div>	
+				</div>			
+			</section>
+
+		<footer id="register-footer">
+				<div class="container">				
+					<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<p><a href="{{ url_for('contactus') }}">CONTACT US</a></p>
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<p>Copyright &copy; 2017  |  Medusa.pys</p>
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<P> FOLLOW US: 
+							<i class="fa fa-facebook">  </i>
+							<i class="fa fa-twitter">  </i>
+							<i class="fa fa-instagram">  </i>
+							</P>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
