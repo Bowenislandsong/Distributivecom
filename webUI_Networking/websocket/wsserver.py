@@ -64,9 +64,9 @@ class SimpleChat(WebSocket):
         if(have_job==0):
             fileli = findjobs()
             if(fileli!='None'):
-                have_job=1
-            else:
                 have_job=0
+            else:
+                have_job=1
         print(fileli)
         msg = self.data
         if(msg!='file'):
@@ -83,9 +83,9 @@ class SimpleChat(WebSocket):
                 fileli = findjobs()
                 counter=0
                 if(fileli!='None'):
-                    have_job=1
-                else:
                     have_job=0
+                else:
+                    have_job=1
         for client in clients:
             if client == self:
                 client.sendMessage(reply)
