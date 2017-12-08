@@ -18,7 +18,7 @@ def findjobs():
     if user:
         files = user['Uploaded file']
         username = user['name']
-#        db.users.update({'name':username}, {"$unset": {'Uploaded file':""}})
+        db.users.update({'name':username}, {"$unset": {'Uploaded file':""}})
         return files
 
 def auth(username, password):
@@ -64,7 +64,7 @@ class SimpleChat(WebSocket):
         #fileli = ['dishantp_Distribut0.zip','dishantp_Distribut1.zip','dishantp_Distribut2.zip']
         if(have_job==0):
             fileli = findjobs()
-            if(fileli!='None'):
+            if(fileli=='None'):
                 have_job=0
             else:
                 have_job=1
@@ -83,7 +83,7 @@ class SimpleChat(WebSocket):
             else:
                 fileli = findjobs()
                 counter=0
-                if(fileli!='None'):
+                if(fileli=='None'):
                     have_job=0
                 else:
                     have_job=1
