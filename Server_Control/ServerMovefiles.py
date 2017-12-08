@@ -1,9 +1,9 @@
 import os
 import subprocess
 
-currentpath  = os.getcwd()
+
 From = "/home/ubuntu/Final_website/home/ubuntu/Source/"
-To = currentpath + "/outgoing/"
+To =  "/var/ftp/pub/outgoing/"
 
 listoftxt=os.listdir(From)
 
