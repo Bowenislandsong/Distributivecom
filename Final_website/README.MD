@@ -5,6 +5,7 @@ Programming Language: HTML, CSS
 3. Contains additional information of our team
 ## Structure:
  ![Alt text](website_structure.jpg?raw=true "Title")
+ 
 Every page could access to the index, about and contact us page. 
 Clients could access to the choose page to choose with function they want to use. 
 If they want to upload the work, they need to login or register first to access to the user page with provides the upload function. 
