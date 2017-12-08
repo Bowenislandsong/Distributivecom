@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Medusa.pys</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/flexboxgrid.css')}}">
+		<link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.css')}}">
+		<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+		
+
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-9383695819970962",
+				enable_page_level_ads: true
+			});
+		</script>
+
+	</head>
+	<body class="choose-bg">
+		<!--Header-->
+		<header id="main-header">
+			<div class="container">
+				<div class="row end-sm end-md end-lg center-xs middle-xs middle-sm middle- md middle-lg">
+					<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+						<h1 class=><span class="primary-text">Medusa</span>.pys</h1>
+					</div>
+					<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+						<nav id="navbar">
+							<ul>
+								<li><a href="{{ url_for('index') }}">Home</a></li>
+								<li><a href="{{ url_for('logout') }}">Logout</a></li>
+								<li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+							</ul>
+						</nav>						
+					</div>					
+				</div>
+			</div>			
+		</header>
+
+		<section id="choose">
+			<div class="container">
+				<div class="row center-xs center-sm center-md center-lg">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="userSide">
+						<h2>I am a USER...</h2>
+						<div class="user-descrip">
+							<p><span class="choose-text">Distribute</span> your work<br> in any programming languages <br>to<span class="choose-text"> multiple</span> devices<br> to  <span class="choose-text">speed up</span> the programming process<br> with <span class="choose-text">affordable</span> price.</p>
+							<a href="{{ url_for('loggedin') }}" class="choose-from-index">Go to User</a>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h4>Not a member yet? <a class="login-to-register" href="{{ url_for('register') }}">Sign Up</a> now!</h4>
+						</div>							
+					</div>					
+									
+					<div class="row center-xs center-sm center-md center-lg">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="prvdSide">
+							<h2>I am a PROVIDER...</h2>
+							<div class="prvd-descrip">
+								<p>Sign up your <span class="choose-text">spare</span> devices <br>and computation ability to our users in a <span class="choose-text">safe</span> way and <span class="choose-text">get paid</span>!</p>
+								<a href="{{ url_for('provider') }}" class="choose-from-index">Explore</a>
+							</div>					
+						</div>					
+					</div>				
+				</div>
+				<br>
+				<br>
+			</div>
+			</section>
+
+		<section id="donation">
+			<div class="container">
+				<div class="row end-xs end-sm end-lg bottom-xs bottom-sm bottom-lg">
+					<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="VHMMM38W6KSCN">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	<footer>
+			<div class="container">				
+				<div class="row center-xs center-sm center-lg middle-xs middle-sm middle-lg">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<p><a href="{{ url_for('contactus') }}">CONTACT US</a></p>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<p>Copyright &copy; 2017  |  Medusa.pys</p>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<P> FOLLOW US: 
+						<a href="https://www.facebook.com/Medusa.pys/"><i class="fa fa-facebook">  </i></a>
+						</P>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
