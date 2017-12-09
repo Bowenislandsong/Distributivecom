@@ -1,4 +1,4 @@
-Programming Language: HTML, CSS
+Programming Language: HTML, CSS, Python, Shell
 ## Functionality:
  1. Shows the services that our project could provide.   
 2. Provides the users with the access to our services. 
