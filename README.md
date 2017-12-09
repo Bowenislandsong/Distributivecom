@@ -27,6 +27,8 @@ interested in signing up their computers for work with fixed amount of credit in
 computing powers. The consumers, who will be paying for the service, can execute their program on
 multiple computers to speed up the program execution process.
 
+ ![Alt text](/Final_website/static/images/user-story.jpg?raw=true "Project Structure")
+
 ## Competitors
 Current leading competitors are BOINC and MATLAB. BOINC only allows well founded super labs be the
 proposing side while volunteering clients are only motivated for the contribution for big topic science.
