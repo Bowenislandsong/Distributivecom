@@ -3,6 +3,8 @@ A Distributive Computing Project.
 
 Project deployed on http://medusapys.site
 
+Project Sprint at https://trello.com/b/i4B9QjWY/sprint
+
 ## Claim
 This project is devoted to create a **Distributive Computing Environment** for the public via web application. (Project proposed to fulfill class requirement for BU EC 601)
 
