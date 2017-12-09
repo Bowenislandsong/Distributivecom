@@ -50,7 +50,7 @@ As their name suggested, **Server Control** runs on server and is in charge of t
 
 The **Website**, currently hosted at http://medusapys.site, is a client side UI for customers looking for hiring computers on Medusa.pys clusters. Clients will upload their file for computing on other computers that are part of our cluster nodes.
 
-To communicate with peer and master computers, the project uses **Swarm** to host **Redis** clusters, commuincation between client and server with Web Sockets, user information stored in MongoDB, and file transfer with FTP powered by vsftpb.
+To communicate with peer and master computers, the project uses **Swarm** to host **Redis** clusters, commuincation between client and server with **Web Sockets**, user information stored in **MongoDB**, and file transfer with **FTP** powered by vsftpb.
 
  ![Alt text](/Final_website/static/images/project-structure.jpg?raw=true "Project Structure")
 
