@@ -24,7 +24,9 @@ Users are people who are not using their computers for a long period of time and
 stable Internet access. These users would be interested in providing their computers for this service for
 credits that can be used to for our service or potentially exchanged to their local currency. In other words, users are people who are
 interested in signing up their computers for work with fixed amount of credit income depending on their
-computing powers. The consumers, who will be paying for the service, can execute their program on
+computing powers. 
+
+The consumers, who will be paying for the service, can execute their program on
 multiple computers to speed up the program execution process.
 
  ![Alt text](/Final_website/static/images/user-story.jpg?raw=true "Project Structure")
