@@ -16,8 +16,8 @@ import threading
 BUFFER_SIZE = 65536
 SOCKET_TIMEOUT = 15
 
-#ADDRESS = "ws://medusapys.site:9999/"
-ADDRESS = "ws://localhost:9999/"
+ADDRESS = "ws://medusapys.site:9999/"
+# ADDRESS = "ws://localhost:9999/"
 
 def uploadFile(filename):
     ftp = FTP('18.216.9.67')     # connect to host, default port
@@ -54,8 +54,10 @@ def receive_message(s):
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
-    template_folder='templates',
-    static_folder='static')
+    # template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
+    # static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
+    template_folder=os.path.abspath("templates"),
+    static_folder=os.path.abspath("static"))
 
 
 def send_file(s):
@@ -139,11 +141,8 @@ def authentication():
 @app.route('/execute')
 def hello(name=None):
     global s
-    print('111111111111111')
     send_message('file', s)
-    print('22222222222222')
     data = s.recv()
-    print('33333333333333')
     print('the file will be download is')
     print(data)
     downloadFile(data)
