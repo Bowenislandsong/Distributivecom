@@ -5,6 +5,8 @@ Project deployed on http://medusapys.site
 
 Project Sprint at https://trello.com/b/i4B9QjWY/sprint
 
+Project User Story at https://trello.com/b/RPGMAzTq/user-stories
+
 ## Claim
 This project is devoted to create a **Distributive Computing Environment** for the public via web application. (Project proposed to fulfill class requirement for BU EC 601)
 
