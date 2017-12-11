@@ -1,6 +1,11 @@
 # Install
 - Install Docker
+- pip install websocket-client
 - install script by navigating to downloaded folder
 - open terminal
-- run './Medusa-Client.command' (MAC)
+MAC 
+- run 'chmod +x Medusa-Client.sh'
+- run './Medusa-Client.sh'
+Linux
 - run './Medusa-Client.sh' (linux)
+
