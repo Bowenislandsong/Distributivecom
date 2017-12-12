@@ -12,11 +12,11 @@ import zipfile
 
 app = Flask(__name__, static_folder = 'static')
 
-app.config['MONGO_DBNAME'] = 'distcomp'
-app.config['MONGO_URI'] = 'mongodb://dishantp:newuser@ds257485.mlab.com:57485/distcomp'
+app.config['MONGO_DBNAME'] = 'Your DB name'
+app.config['MONGO_URI'] = 'Your DB URI'
 mongo = PyMongo(app)
-client = MongoClient('mongodb://dishantp:newuser@ds257485.mlab.com:57485/distcomp')
-db=client.distcomp
+client = MongoClient('DB URI')
+db=client.YourDBName
 
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
