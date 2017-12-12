@@ -13,10 +13,10 @@ import zipfile
 app = Flask(__name__, static_folder = 'static')
 
 app.config['MONGO_DBNAME'] = 'Your DB name'
-app.config['MONGO_URI'] = 'Your DB URI'
+app.config['MONGO_URI'] = 'DB URI'
 mongo = PyMongo(app)
 client = MongoClient('DB URI')
-db=client.YourDBName
+db=client.DB_name
 
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -90,17 +90,17 @@ def upload_file2():
             filename = session['username']+'_'+filename
             target = os.path.join(APP_ROOT, 'home/ubuntu/Source/{}'.format(filename))
             destination = "/".join([target])
-            f.save(destination)
+            #f.save(destination)
             #subprocess.call("mv "+filename+" /var/ftp/pub/outgoing/")
             From = "/home/ubuntu/Final_website/home/ubuntu/Source/"
             ff = From + filename
-            users.update({"name":session['username']}, {"$push":{"Uploaded file":filename}})
+            #users.update({"name":session['username']}, {"$push":{"Uploaded file":filename}})
             user = db.users.find_one({"name": session['username']})
             fileexists = user.get('Uploaded file')
             #fileexists = db.users.find_one({"name":session['username'],})
-            if fileexists==None or filename not in fileexists:
+            if fileexists==None or filename not in user['Uploaded file']:
                 users.update({"name":session['username']}, {"$push":{"Uploaded file":filename}})
-                #f.save(destination)
+                f.save(destination)
                 subprocess.call('sudo mv '+ff+' /var/ftp/pub/outgoing/', shell = True)
                 message = Markup(f.filename+ ' has been uploaded')
                 flash(message)
@@ -109,22 +109,21 @@ def upload_file2():
                 message = Markup(f.filename+ ' has already been uploaded')
                 flash(message)
                 return render_template('userlogout.html')
-        message = Markup(f.filename+ ' has been uploaded')
-        flash(message)
-        return render_template('userlogout.html')
+
     return render_template('userlogout.html')        
 
 @app.route('/downloader', methods = ['POST'])
 def download_file():
     if 'username' in session:
         if request.method == 'POST':
-            try:
-                shutil.make_archive('/var/ftp/pub/incoming/uploading/dishantp', 'zip', '/var/ftp/pub/incoming/', 'uploading')
-                return send_from_directory(directory='/var/ftp/pub/incoming/uploading/', filename = session['username']+'.zip', as_attachment = True)
-            except:
-                message = Markup('Please wait until your result is ready.')
-                flash(message)
-                return render_template('userlogout.html')
+            for files in os.listdir('/var/ftp/pub/incoming/uploading/'):
+                if session['username'] in files:
+                    shutil.make_archive('/var/ftp/pub/incoming/uploading'+session['username'], 'zip', '/var/ftp/pub/incoming/uploading', files)
+                    return send_from_directory(directory='/var/ftp/pub/incoming/', filename = 'uploading'+session['username']+'.zip', as_attachment = True)
+            message = Markup('Please wait until your result is ready.')
+            flash(message)
+            return render_template('userlogout.html')    
+    return render_template('userlogout.html')
 
 @app.route('/logout/')
 def logout():
