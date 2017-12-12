@@ -12,6 +12,7 @@ from websocket import *
 from ftplib import FTP
 from zipfile import *
 import threading
+import shutil
 
 BUFFER_SIZE = 65536
 SOCKET_TIMEOUT = 15
@@ -54,8 +55,6 @@ def receive_message(s):
 project_root = os.path.dirname(__file__)
 app = Flask(
     __name__,
-    # template_folder='/Users/yangzhiyi/Desktop/webUI_1/templates',
-    # static_folder='/Users/yangzhiyi/Desktop/webUI_1/static')
     template_folder=os.path.abspath("templates"),
     static_folder=os.path.abspath("static"))
 
@@ -97,20 +96,20 @@ def init_connection(address):
     return s
 
 def scan(data):
-#   prevList = os.listdir()
     path=os.getcwd().split(os.environ['HOME'])[1]
     print(path)
-    #path=os.getcwd()
-    #cmd = 'docker run -it -v ~/Desktop/client_share:/client_share con'
-    
     while True:
         if(glob.glob('ModelTraining.jar')):
             run_program(path)
             break
     currList = os.listdir()
-#   diffList = list(set(currList).symmetric_difference(set(prevList)))
     zip_archive = ZipFile( "result_"+data,"w",ZIP_DEFLATED)
     for filename in currList:
+        if os.path.isdir(filename):
+            for dirpath,dirs,files in os.walk(filename):
+                for f in files:
+                    fn = os.path.join(dirpath, f)
+                    zip_archive.write(fn)
         zip_archive.write(filename)
     zip_archive.close()
     return "result_"+ data
@@ -157,3 +156,4 @@ def hello(name=None):
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
     app.debug
+
