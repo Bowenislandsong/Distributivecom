@@ -57,6 +57,8 @@ To communicate with peer and master computers, the project uses *Swarm* to host 
  ![Alt text](/Final_website/static/images/project-structure.jpg?raw=true "Project Structure")
 
 ## Testing & Result
+Manual Testing Result avaliable at https://docs.google.com/spreadsheets/d/15eJNxu7yRpKBnOrxvpmXRAIFQRdWiJ12TazPb3c-FlM/edit?usp=sharing
+
 Automated Website testing result available at http://www.webpagetest.org/result/171208_8Z_78ef41e76aa9df6ef1cd5b6e9a5aa3b1/
 
 
