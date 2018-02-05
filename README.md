@@ -18,7 +18,7 @@ commercials.)
 
 ## Motivation
 We are motivated in developing this project because of our interest in distributive system among IoTs,
-potential finical benefits, and needs for such service from our own experience. The cooperation
+potential financial benefits, and needs for such service from our own experience. The cooperation
 between IoTs is an absolute trend towards smart grid and this project, we believe, will prepare us for a general understanding. we do acknowledge the difference between distributive system and computing, but we believe distributive computing will help studying the distributive system model.
 
 ## Users and Consumers
